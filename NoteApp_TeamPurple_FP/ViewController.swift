@@ -12,6 +12,7 @@ import CoreData
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate
 {
 
+    @IBOutlet weak var searchBar: UISearchBar!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         <#code#>
