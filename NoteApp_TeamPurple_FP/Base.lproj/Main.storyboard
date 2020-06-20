@@ -31,24 +31,28 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EmS-Jt-QIu">
-                                                    <rect key="frame" x="368" y="11.5" width="36" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title/ Note Text" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tw9-cK-z8r">
-                                                    <rect key="frame" x="30" y="11.5" width="116.5" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="131" translatesAutoresizingMaskIntoConstraints="NO" id="MIx-58-dAB">
+                                                    <rect key="frame" x="30" y="11.5" width="374" height="20.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title/ Note Text" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tw9-cK-z8r">
+                                                            <rect key="frame" x="0.0" y="0.0" width="121.5" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EmS-Jt-QIu">
+                                                            <rect key="frame" x="252.5" y="0.0" width="121.5" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="EmS-Jt-QIu" firstAttribute="trailing" secondItem="tKK-8N-q0b" secondAttribute="trailingMargin" constant="10" id="JKc-jN-Ug0"/>
-                                                <constraint firstItem="EmS-Jt-QIu" firstAttribute="centerY" secondItem="tKK-8N-q0b" secondAttribute="centerY" id="MHJ-PY-n2g"/>
-                                                <constraint firstItem="Tw9-cK-z8r" firstAttribute="leading" secondItem="tKK-8N-q0b" secondAttribute="leadingMargin" constant="10" id="lWC-FN-ZI6"/>
-                                                <constraint firstItem="Tw9-cK-z8r" firstAttribute="centerY" secondItem="tKK-8N-q0b" secondAttribute="centerY" id="m56-xk-QyR"/>
+                                                <constraint firstItem="MIx-58-dAB" firstAttribute="leading" secondItem="tKK-8N-q0b" secondAttribute="leadingMargin" constant="10" id="7IB-mx-ptJ"/>
+                                                <constraint firstItem="MIx-58-dAB" firstAttribute="trailing" secondItem="tKK-8N-q0b" secondAttribute="trailingMargin" constant="10" id="T6E-b4-n70"/>
+                                                <constraint firstItem="MIx-58-dAB" firstAttribute="centerY" secondItem="tKK-8N-q0b" secondAttribute="centerY" id="isI-ug-834"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -64,7 +68,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="nXX-q2-dpw"/>
+                    <navigationItem key="navigationItem" id="nXX-q2-dpw">
+                        <barButtonItem key="rightBarButtonItem" image="square.and.pencil" catalog="system" id="Nj9-vI-d7O"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="Qse-n0-U1C" id="22o-qj-QuJ"/>
                     </connections>
@@ -155,4 +161,7 @@
             <point key="canvasLocation" x="137.68115942028987" y="116.51785714285714"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="square.and.pencil" catalog="system" width="128" height="118"/>
+    </resources>
 </document>
