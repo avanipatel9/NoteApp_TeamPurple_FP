@@ -69,7 +69,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="nXX-q2-dpw">
-                        <barButtonItem key="rightBarButtonItem" image="square.and.pencil" catalog="system" id="Nj9-vI-d7O"/>
+                        <barButtonItem key="rightBarButtonItem" image="square.and.pencil" catalog="system" id="Nj9-vI-d7O">
+                            <connections>
+                                <segue destination="PYO-AF-YRA" kind="show" id="fNA-rX-vgV"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="Qse-n0-U1C" id="22o-qj-QuJ"/>
@@ -87,55 +91,64 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="p62-6a-p2D">
-                                <rect key="frame" x="20" y="350" width="374" height="144"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter notes title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JTj-UV-f5K">
+                                <rect key="frame" x="20" y="128" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select Category" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r8x-I3-9tj">
+                                <rect key="frame" x="20" y="182" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="J8F-Nn-sYB">
+                                <rect key="frame" x="20" y="236" width="374" height="200"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="eH5-MF-zea"/>
+                                </constraints>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0rS-41-A9C">
-                                <rect key="frame" x="34" y="472" width="346" height="134"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fke-Nc-XzA">
-                                <rect key="frame" x="20" y="216" width="174" height="126"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </pickerView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select Category" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r8x-I3-9tj">
-                                <rect key="frame" x="20" y="174" width="374" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5V1-Oh-2dR">
-                                <rect key="frame" x="254" y="233" width="126" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Select"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oAI-gT-igq">
-                                <rect key="frame" x="34" y="643" width="174" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Add Voice Note"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6jy-s4-Wze">
-                                <rect key="frame" x="34" y="395" width="174" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6jy-s4-Wze">
+                                <rect key="frame" x="167" y="456" width="80" height="30"/>
                                 <state key="normal" title="Add Picture"/>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter notes title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JTj-UV-f5K">
-                                <rect key="frame" x="20" y="132" width="374" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0rS-41-A9C">
+                                <rect key="frame" x="20" y="506" width="374" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="W9p-La-fVX"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oAI-gT-igq">
+                                <rect key="frame" x="153.5" y="726" width="107" height="30"/>
+                                <state key="normal" title="Add Voice Note"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="r8x-I3-9tj" firstAttribute="top" secondItem="JTj-UV-f5K" secondAttribute="bottom" constant="20" id="11o-zR-L2a"/>
+                            <constraint firstItem="J8F-Nn-sYB" firstAttribute="leading" secondItem="Rmq-QN-9nV" secondAttribute="leading" constant="20" id="6bJ-eV-dWN"/>
+                            <constraint firstItem="6jy-s4-Wze" firstAttribute="centerX" secondItem="g9F-yd-QFF" secondAttribute="centerX" id="6zy-pX-nlZ"/>
+                            <constraint firstItem="0rS-41-A9C" firstAttribute="leading" secondItem="Rmq-QN-9nV" secondAttribute="leading" constant="20" id="8L8-nW-k3y"/>
+                            <constraint firstItem="oAI-gT-igq" firstAttribute="top" secondItem="0rS-41-A9C" secondAttribute="bottom" constant="20" id="9C7-n2-zMF"/>
+                            <constraint firstItem="0rS-41-A9C" firstAttribute="top" secondItem="6jy-s4-Wze" secondAttribute="bottom" constant="20" id="QoJ-6d-whl"/>
+                            <constraint firstItem="J8F-Nn-sYB" firstAttribute="top" secondItem="r8x-I3-9tj" secondAttribute="bottom" constant="20" id="V7z-SS-aF5"/>
+                            <constraint firstItem="JTj-UV-f5K" firstAttribute="leading" secondItem="Rmq-QN-9nV" secondAttribute="leading" constant="20" id="Wt4-WH-5wC"/>
+                            <constraint firstItem="JTj-UV-f5K" firstAttribute="top" secondItem="Rmq-QN-9nV" secondAttribute="top" constant="40" id="Y8L-Hn-Klu"/>
+                            <constraint firstItem="6jy-s4-Wze" firstAttribute="top" secondItem="J8F-Nn-sYB" secondAttribute="bottom" constant="20" id="ZWM-Az-zzP"/>
+                            <constraint firstItem="Rmq-QN-9nV" firstAttribute="trailing" secondItem="r8x-I3-9tj" secondAttribute="trailing" constant="20" id="aPg-TA-S0E"/>
+                            <constraint firstItem="Rmq-QN-9nV" firstAttribute="trailing" secondItem="0rS-41-A9C" secondAttribute="trailing" constant="20" id="gbn-HS-C6Q"/>
+                            <constraint firstItem="r8x-I3-9tj" firstAttribute="leading" secondItem="Rmq-QN-9nV" secondAttribute="leading" constant="20" id="mf1-PD-9Ul"/>
+                            <constraint firstItem="Rmq-QN-9nV" firstAttribute="trailing" secondItem="J8F-Nn-sYB" secondAttribute="trailing" constant="20" id="ujj-kH-vne"/>
+                            <constraint firstItem="Rmq-QN-9nV" firstAttribute="trailing" secondItem="JTj-UV-f5K" secondAttribute="trailing" constant="20" id="wvL-u8-B9J"/>
+                            <constraint firstItem="oAI-gT-igq" firstAttribute="centerX" secondItem="g9F-yd-QFF" secondAttribute="centerX" id="z7Y-MR-YQ1"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Rmq-QN-9nV"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add Note" id="a0u-YL-Nmc">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="cKb-gl-tZT" userLabel="Add"/>
+                        <barButtonItem key="rightBarButtonItem" title="ADD" id="cKb-gl-tZT" userLabel="Add"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yKT-Yb-xBt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
