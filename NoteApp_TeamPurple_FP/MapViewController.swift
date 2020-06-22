@@ -17,7 +17,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     @IBOutlet weak var mapView: MKMapView!
     
     var listArray=[NSManagedObject]()
-    var item:[Note]=[];
+    var items:[Note]=[];
     let locationManager=CLLocationManager()
     var dataManager:NSManagedObjectContext!
     var annonationCollection=[MKAnnotation]()
@@ -37,7 +37,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         let appDelegate=UIApplication.shared.delegate as! AppDelegate;
         dataManager=appDelegate.persistentContainer.viewContext
         
-        fetchData();
+        readData();
     }
     
 
@@ -50,7 +50,29 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         // Pass the selected object to the new view controller.
     }
     */
-    func fetchData(){
+    func readData(){
+        
+        let request=NSFetchRequest<NSFetchRequestResult>(entityName: "Notes");
+        do {
+            let result=try dataManager.fetch(request);
+            print(result.count)
+            
+            listArray=result as! [NSManagedObject]
+            print(listArray.count)
+            
+            for item in listArray{
+                
+                let noteModel=Note()
+                noteModel.title=item.value(forKey: "title") as! String
+                noteModel.noteText=item.value(forKey: "text") as! String
+                noteModel.latitude=item.value(forKey: "latitude") as! Double
+                noteModel.longitude=item.value(forKey: "longitude") as! Double
+                items.append(noteModel)
+            }
+        
+        } catch {
+            print("FAILED")
+        }
         
     }
     
