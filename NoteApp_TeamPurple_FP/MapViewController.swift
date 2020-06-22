@@ -33,6 +33,11 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         
         mapView.delegate=self
         mapView.showsUserLocation=true
+        
+        let appDelegate=UIApplication.shared.delegate as! AppDelegate;
+        dataManager=appDelegate.persistentContainer.viewContext
+        
+        fetchData();
     }
     
 
@@ -45,5 +50,25 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         // Pass the selected object to the new view controller.
     }
     */
+    func fetchData(){
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 }
