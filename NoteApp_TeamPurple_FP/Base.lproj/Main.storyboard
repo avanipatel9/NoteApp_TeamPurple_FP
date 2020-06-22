@@ -76,6 +76,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="allNotesTV" destination="QAY-ee-Hfu" id="0RZ-lz-Lfh"/>
                         <outlet property="searchBar" destination="Qse-n0-U1C" id="22o-qj-QuJ"/>
                     </connections>
                 </viewController>
