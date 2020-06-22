@@ -58,13 +58,31 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qqO-OL-XUC">
+                                <rect key="frame" x="0.0" y="818" width="414" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" id="b49-D6-nks">
+                                        <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="fw0-Ae-5aA">
+                                            <rect key="frame" x="20" y="5.5" width="374" height="33"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <segments>
+                                                <segment title="Sort By Title"/>
+                                                <segment title="Sort By Date"/>
+                                            </segments>
+                                        </segmentedControl>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="QAY-ee-Hfu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="8J5-9Q-u7X"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qqO-OL-XUC" secondAttribute="bottom" id="CUO-K7-JKL"/>
                             <constraint firstItem="QAY-ee-Hfu" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Fh9-CS-GzF"/>
                             <constraint firstItem="QAY-ee-Hfu" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="cIB-d4-8KM"/>
                             <constraint firstItem="QAY-ee-Hfu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cOF-SA-cd0"/>
+                            <constraint firstItem="qqO-OL-XUC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ety-gC-Cxh"/>
+                            <constraint firstItem="qqO-OL-XUC" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="j1w-Vf-7DD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -132,10 +150,6 @@
                                 <rect key="frame" x="153.5" y="726" width="107" height="30"/>
                                 <state key="normal" title="Add Voice Note"/>
                             </button>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IZ2-bL-0Kj">
-                                <rect key="frame" x="144" y="764" width="127" height="98"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -168,7 +182,6 @@
                     <connections>
                         <outlet property="addVoiceBtn" destination="oAI-gT-igq" id="6LW-Fk-0Si"/>
                         <outlet property="btnAddImage" destination="6jy-s4-Wze" id="msR-wv-rsT"/>
-                        <outlet property="categoryPicker" destination="IZ2-bL-0Kj" id="TbY-B3-DSL"/>
                         <outlet property="edtTitle" destination="JTj-UV-f5K" id="nhj-78-uY4"/>
                         <outlet property="imageView" destination="0rS-41-A9C" id="8DI-Lr-Sux"/>
                         <outlet property="txtAdd" destination="J8F-Nn-sYB" id="w6R-MA-EpQ"/>
@@ -273,7 +286,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cdw-qD-Hcq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3212" y="125"/>
+            <point key="canvasLocation" x="3375" y="125"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="N60-db-IPv">
