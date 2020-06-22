@@ -190,6 +190,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ll6-Xv-EHZ">
                                 <rect key="frame" x="168" y="261" width="78" height="30"/>
                                 <state key="normal" title="Record"/>
+                                <connections>
+                                    <action selector="btnActionRecord:" destination="GUT-fc-ndZ" eventType="touchUpInside" id="Iyy-EF-t1e"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

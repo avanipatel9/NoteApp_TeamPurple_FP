@@ -103,6 +103,53 @@ class AddVoiceNoteViewController: UIViewController {
         let filePath = getDocumentsDirectory().appendingPathComponent(filename)
     return filePath
     }
+    @IBAction func btnActionRecord(_ sender: Any)
+    {
+        if(isRecording)
+        {
+            finishAudioRecording(success: true)
+            btnRecord.setTitle("Record", for: .normal)
+            btnPlay?.isEnabled = true
+            isRecording = false
+        }
+        else
+        {
+            setup_recorder()
+
+            audioRecorder.record()
+            meterTimer = Timer.scheduledTimer(timeInterval: 0.1, target:self, selector:#selector(self.updateAudioMeter(timer:)), userInfo:nil, repeats:true)
+           btnRecord.setTitle("Stop", for: .normal)
+           btnPlay?.isEnabled = false
+            isRecording = true
+        }
+    }
+    @objc func updateAudioMeter(timer: Timer)
+    {
+        if audioRecorder.isRecording
+        {
+            let hr = Int((audioRecorder.currentTime / 60) / 60)
+            let min = Int(audioRecorder.currentTime / 60)
+            let sec = Int(audioRecorder.currentTime.truncatingRemainder(dividingBy: 60))
+            let totalTimeString = String(format: "%02d:%02d:%02d", hr, min, sec)
+            recordingTimeLabel.text = totalTimeString
+            audioRecorder.updateMeters()
+        }
+    }
+
+    func finishAudioRecording(success: Bool)
+    {
+        if success
+        {
+            audioRecorder.stop()
+            audioRecorder = nil
+            meterTimer.invalidate()
+            print("recorded successfully.")
+        }
+        else
+        {
+            display_alert(msg_title: "Error", msg_desc: "Recording failed.", action_title: "OK")
+        }
+    }
     
 
     /*
