@@ -55,6 +55,9 @@
                                                 <constraint firstItem="MIx-58-dAB" firstAttribute="centerY" secondItem="tKK-8N-q0b" secondAttribute="centerY" id="isI-ug-834"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="f1S-iv-wQu" kind="show" id="xhW-38-Uvv"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -192,7 +195,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yKT-Yb-xBt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1828.985507246377" y="124.55357142857142"/>
+            <point key="canvasLocation" x="1826" y="-675"/>
         </scene>
         <!--Add Voice Note View Controller-->
         <scene sceneID="0f4-Zh-8oP">
@@ -274,22 +277,37 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MWn-6U-YLg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2555.072463768116" y="124.55357142857142"/>
+            <point key="canvasLocation" x="2280" y="830"/>
         </scene>
-        <!--View Controller-->
+        <!--View Notes View Controller-->
         <scene sceneID="wnd-lu-n88">
             <objects>
-                <viewController id="f1S-iv-wQu" sceneMemberID="viewController">
+                <viewController id="f1S-iv-wQu" customClass="ViewNotesViewController" customModule="NoteApp_TeamPurple_FP" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fzT-gd-YlW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Ap6-63-aaY"/>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem image="trash" catalog="system" id="Shz-5V-W0t"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="YFI-WE-t5d"/>
+                        <barButtonItem image="checkmark.circle" catalog="system" id="OK0-rt-cXy"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Z9N-Ku-ExC"/>
+                        <barButtonItem image="camera" catalog="system" id="WHy-dh-tWb"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="0wT-eR-XxK"/>
+                        <barButtonItem image="pencil.tip.crop.circle" catalog="system" id="4RV-YU-wSc"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="zcM-gu-RJu"/>
+                        <barButtonItem image="square.and.pencil" catalog="system" id="Ghg-DI-QXq"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" id="hpv-Vu-aJJ">
+                        <barButtonItem key="rightBarButtonItem" image="square.and.arrow.up" catalog="system" id="fT2-Y7-HIB"/>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cdw-qD-Hcq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3375" y="125"/>
+            <point key="canvasLocation" x="2036" y="117"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="N60-db-IPv">
@@ -311,6 +329,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="camera" catalog="system" width="128" height="96"/>
+        <image name="checkmark.circle" catalog="system" width="128" height="121"/>
+        <image name="pencil.tip.crop.circle" catalog="system" width="128" height="121"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <image name="square.and.pencil" catalog="system" width="128" height="118"/>
+        <image name="trash" catalog="system" width="121" height="128"/>
     </resources>
 </document>
