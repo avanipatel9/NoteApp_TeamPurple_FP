@@ -150,6 +150,44 @@ class AddVoiceNoteViewController: UIViewController {
             display_alert(msg_title: "Error", msg_desc: "Recording failed.", action_title: "OK")
         }
     }
+    @IBAction func btnActionPlay(_ sender: Any) {
+
+        if(isPlaying)
+        {
+            audioPlayer.stop()
+            btnRecord.isEnabled = true
+            btnPlay?.setTitle("Play", for: .normal)
+            isPlaying = false
+        }
+        else
+        {
+            if FileManager.default.fileExists(atPath: getFileUrl().path)
+            {
+                btnRecord.isEnabled = false
+                btnPlay?.setTitle("pause", for: .normal)
+                prepare_play()
+                audioPlayer?.play()
+                isPlaying = true
+            }
+            else
+            {
+                display_alert(msg_title: "Error", msg_desc: "Audio file is missing.", action_title: "OK")
+            }
+        }
+    }
+    func prepare_play()
+    {
+        do
+        {
+            audioPlayer = try AVAudioPlayer(contentsOf: getFileUrl())
+            audioPlayer.delegate = self as? AVAudioPlayerDelegate
+            audioPlayer.prepareToPlay()
+        }
+        catch{
+            print("Error")
+        }
+    }
+    
     
 
     /*

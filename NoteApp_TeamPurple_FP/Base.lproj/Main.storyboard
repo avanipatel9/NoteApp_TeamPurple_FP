@@ -186,6 +186,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rXf-UA-fnU">
                                 <rect key="frame" x="192" y="433" width="30" height="30"/>
                                 <state key="normal" title="Play"/>
+                                <connections>
+                                    <action selector="btnActionPlay:" destination="GUT-fc-ndZ" eventType="touchUpInside" id="OlA-N1-7t8"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ll6-Xv-EHZ">
                                 <rect key="frame" x="168" y="261" width="78" height="30"/>
