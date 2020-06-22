@@ -125,6 +125,10 @@
                                 <rect key="frame" x="153.5" y="726" width="107" height="30"/>
                                 <state key="normal" title="Add Voice Note"/>
                             </button>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IZ2-bL-0Kj">
+                                <rect key="frame" x="144" y="764" width="127" height="98"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -155,6 +159,7 @@
                         <outlet property="addPictureBtn" destination="6jy-s4-Wze" id="F6C-mj-Eye"/>
                         <outlet property="addVoiceBtn" destination="oAI-gT-igq" id="exD-f8-YmH"/>
                         <outlet property="btnAddImage" destination="6jy-s4-Wze" id="VVO-TR-wJP"/>
+                        <outlet property="categoryPicker" destination="IZ2-bL-0Kj" id="T3X-bj-6Aw"/>
                         <outlet property="categoryTxt" destination="r8x-I3-9tj" id="0lv-Ek-nrG"/>
                         <outlet property="title" destination="JTj-UV-f5K" id="DMq-Ct-qe8"/>
                         <outlet property="txtArea" destination="J8F-Nn-sYB" id="AXl-2d-3Sc"/>

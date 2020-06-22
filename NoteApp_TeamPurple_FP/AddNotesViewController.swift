@@ -11,6 +11,9 @@ import CoreData
 import CoreLocation
 
 class AddNotesViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource,UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate{
+    
+   
+    
     var locationManager: CLLocationManager!
        var dataManager : NSManagedObjectContext!
        var listArray = [NSManagedObject]()
@@ -29,6 +32,7 @@ class AddNotesViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
     @IBOutlet weak var edtTitle: UITextField!
     
     
+    @IBOutlet weak var categoryPicker: UIPickerView!
     @IBOutlet weak var txtCategory: UITextField!
     
     @IBOutlet weak var btnAddImage: UIButton!
@@ -39,9 +43,49 @@ class AddNotesViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate;
+                  dataManager = appDelegate.persistentContainer.viewContext;
+                  categoryPickerData = ["Work", "Home", "School", "Miscellaneous", "Sports", "Others", "None"]
+                  self.categoryPicker.delegate = self
+                  self.categoryPicker.dataSource = self
+
+                  categoryPicker.isHidden = true;
+
+                  txtCategory.text = "\(categoryPickerData[6])"
+                  txtCategory.isUserInteractionEnabled = false
+        
+                  noteDate = getDate()
+        
+              if (CLLocationManager.locationServicesEnabled())
+              {
+                  locationManager = CLLocationManager()
+                  locationManager.delegate = self
+                  locationManager.desiredAccuracy = kCLLocationAccuracyBest
+                  locationManager.requestAlwaysAuthorization()
+                  locationManager.startUpdatingLocation()
+                  
+              }
     }
     
+    func getDate() -> Date{
+           let date = Date();
+               let dateFormatter = DateFormatter()
+               dateFormatter.timeZone = TimeZone(abbreviation: "GMT") //Set timezone that you want
+               dateFormatter.locale = NSLocale.current
+               dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss" //Specify your format that you want
+           
+               let strDate = dateFormatter.string(from: date)
+           let d = dateFormatter.date(from: strDate)
+           return d!
+       }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+           <#code#>
+       }
+       
+       func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+           <#code#>
+       }
 
     /*
     // MARK: - Navigation
@@ -53,4 +97,4 @@ class AddNotesViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
     }
     */
 
-}
+} //class end
