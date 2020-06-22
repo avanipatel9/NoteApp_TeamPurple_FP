@@ -11,8 +11,11 @@ import MapKit
 import CoreData
 import CoreLocation
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDelegate {
 
+    
+    @IBOutlet weak var mapView: MKMapView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
