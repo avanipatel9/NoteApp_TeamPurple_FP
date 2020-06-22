@@ -26,6 +26,12 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        locationManager.delegate=self
+        locationManager.desiredAccuracy=kCLLocationAccuracyNearestTenMeters
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        
+        mapView.showsUserLocation=true
     }
     
 
