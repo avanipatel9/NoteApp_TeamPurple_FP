@@ -85,24 +85,9 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
             annotationCollection.append(myAnnotation);
             self.mapView.addAnnotation(myAnnotation);
         }
-        
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        <#code#>
+    }
 }
