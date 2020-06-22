@@ -100,6 +100,9 @@
                                 <rect key="frame" x="20" y="182" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="selectCategory:" destination="PYO-AF-YRA" eventType="editingDidEnd" id="5XX-gV-c7s"/>
+                                </connections>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="J8F-Nn-sYB">
                                 <rect key="frame" x="20" y="236" width="374" height="200"/>
@@ -114,6 +117,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6jy-s4-Wze">
                                 <rect key="frame" x="167" y="456" width="80" height="30"/>
                                 <state key="normal" title="Add Picture"/>
+                                <connections>
+                                    <action selector="btnChooseImage:" destination="PYO-AF-YRA" eventType="touchUpInside" id="UFd-Dp-hpW"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0rS-41-A9C">
                                 <rect key="frame" x="20" y="506" width="374" height="200"/>
@@ -152,17 +158,20 @@
                         <viewLayoutGuide key="safeArea" id="Rmq-QN-9nV"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add Note" id="a0u-YL-Nmc">
-                        <barButtonItem key="rightBarButtonItem" title="ADD" id="cKb-gl-tZT" userLabel="Add"/>
+                        <barButtonItem key="rightBarButtonItem" title="ADD" id="cKb-gl-tZT" userLabel="Add">
+                            <connections>
+                                <action selector="btnAdd:" destination="PYO-AF-YRA" id="uXn-OX-pZ1"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="addImg" destination="0rS-41-A9C" id="ct4-Xx-9fh"/>
-                        <outlet property="addPictureBtn" destination="6jy-s4-Wze" id="F6C-mj-Eye"/>
-                        <outlet property="addVoiceBtn" destination="oAI-gT-igq" id="exD-f8-YmH"/>
-                        <outlet property="btnAddImage" destination="6jy-s4-Wze" id="VVO-TR-wJP"/>
-                        <outlet property="categoryPicker" destination="IZ2-bL-0Kj" id="T3X-bj-6Aw"/>
-                        <outlet property="categoryTxt" destination="r8x-I3-9tj" id="0lv-Ek-nrG"/>
-                        <outlet property="title" destination="JTj-UV-f5K" id="DMq-Ct-qe8"/>
-                        <outlet property="txtArea" destination="J8F-Nn-sYB" id="AXl-2d-3Sc"/>
+                        <outlet property="addVoiceBtn" destination="oAI-gT-igq" id="6LW-Fk-0Si"/>
+                        <outlet property="btnAddImage" destination="6jy-s4-Wze" id="msR-wv-rsT"/>
+                        <outlet property="categoryPicker" destination="IZ2-bL-0Kj" id="TbY-B3-DSL"/>
+                        <outlet property="edtTitle" destination="JTj-UV-f5K" id="nhj-78-uY4"/>
+                        <outlet property="imageView" destination="0rS-41-A9C" id="8DI-Lr-Sux"/>
+                        <outlet property="txtAdd" destination="J8F-Nn-sYB" id="w6R-MA-EpQ"/>
+                        <outlet property="txtCategory" destination="r8x-I3-9tj" id="Ref-GK-cRv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yKT-Yb-xBt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

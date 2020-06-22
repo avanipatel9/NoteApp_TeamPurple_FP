@@ -27,17 +27,14 @@ class AddNotesViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
        var imagePicker = UIImagePickerController()
        var imageData = Data()
 
-    @IBOutlet weak var txtAdd: UITextView!
-    
     @IBOutlet weak var edtTitle: UITextField!
-    
-    
+    @IBOutlet weak var txtAdd: UITextView!
     @IBOutlet weak var categoryPicker: UIPickerView!
-    @IBOutlet weak var txtCategory: UITextField!
-    
-    @IBOutlet weak var btnAddImage: UIButton!
     
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var btnAddImage: UIButton!
+    @IBOutlet weak var txtCategory: UITextField!
+    
     
     @IBOutlet weak var addVoiceBtn: UIButton!
     override func viewDidLoad() {
@@ -128,15 +125,39 @@ class AddNotesViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
         self.categoryPicker.isHidden = true;
         txtCategory.text = categoryPickerData[row]
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    
+    @IBAction func selectCategory(_ sender: Any) {
+        self.categoryPicker.isHidden = false
     }
-    */
-
+    
+    
+    @IBAction func btnAdd(_ sender: Any) {
+        
+    }
+    
+    @IBAction func btnChooseImage(_ sender: Any) {
+        let alert = UIAlertController(title: "NoteIt!", message: "Pick image from", preferredStyle: .alert)
+               alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { action in
+                 if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                    let imagePicker = UIImagePickerController()
+                           imagePicker.delegate = self
+                           imagePicker.sourceType = .camera;
+                           imagePicker.allowsEditing = false
+                           self.present(imagePicker, animated: true, completion: nil)
+                       }
+           }))
+           alert.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { action in
+                           if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+                            let imagePicker = UIImagePickerController()
+                           imagePicker.delegate = self
+                           imagePicker.sourceType = .photoLibrary;
+                           imagePicker.allowsEditing = true
+                           self.present(imagePicker, animated: true, completion: nil)
+                     }
+                 
+           }))
+           alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+           self.present(alert, animated: true)
+    }
 } //class end
