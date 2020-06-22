@@ -160,4 +160,17 @@ class AddNotesViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
            self.present(alert, animated: true)
     }
+    
+    
+    public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+              if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+                  self.imageView.isHidden =  false
+                  self.imageView.image = image
+                 // self.RemovePhotoBTN.isHidden =  false
+                  self.btnAddImage.isHidden =  true
+                  imageData = image.pngData()!
+              }
+              self.dismiss(animated: true, completion: nil)
+          }
+    
 } //class end
