@@ -59,11 +59,11 @@
                                 </prototypes>
                             </tableView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qqO-OL-XUC">
-                                <rect key="frame" x="0.0" y="818" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                                 <items>
                                     <barButtonItem style="plain" id="b49-D6-nks">
                                         <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="fw0-Ae-5aA">
-                                            <rect key="frame" x="20" y="5.5" width="374" height="33"/>
+                                            <rect key="frame" x="20" y="10.5" width="374" height="33"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <segments>
                                                 <segment title="Sort By Title"/>
@@ -149,6 +149,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oAI-gT-igq">
                                 <rect key="frame" x="153.5" y="726" width="107" height="30"/>
                                 <state key="normal" title="Add Voice Note"/>
+                                <connections>
+                                    <segue destination="GUT-fc-ndZ" kind="show" id="sGO-H8-2RS"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -180,7 +183,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="addVoiceBtn" destination="oAI-gT-igq" id="6LW-Fk-0Si"/>
                         <outlet property="btnAddImage" destination="6jy-s4-Wze" id="msR-wv-rsT"/>
                         <outlet property="edtTitle" destination="JTj-UV-f5K" id="nhj-78-uY4"/>
                         <outlet property="imageView" destination="0rS-41-A9C" id="8DI-Lr-Sux"/>
@@ -201,7 +203,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6jN-FJ-W9m">
-                                <rect key="frame" x="71" y="150" width="42" height="21"/>
+                                <rect key="frame" x="71" y="194" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -214,7 +216,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ll6-Xv-EHZ">
-                                <rect key="frame" x="168" y="261" width="78" height="30"/>
+                                <rect key="frame" x="168" y="305" width="78" height="30"/>
                                 <state key="normal" title="Record"/>
                                 <connections>
                                     <action selector="btnActionRecord:" destination="GUT-fc-ndZ" eventType="touchUpInside" id="Iyy-EF-t1e"/>
@@ -234,6 +236,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GJL-RI-MN3"/>
                     </view>
+                    <navigationItem key="navigationItem" id="jzn-5f-FOC"/>
                     <connections>
                         <outlet property="btnPlay" destination="rXf-UA-fnU" id="16o-7U-ljp"/>
                         <outlet property="btnRecord" destination="Ll6-Xv-EHZ" id="gve-uG-pGF"/>
