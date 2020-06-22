@@ -150,6 +150,15 @@
                     <navigationItem key="navigationItem" title="Add Note" id="a0u-YL-Nmc">
                         <barButtonItem key="rightBarButtonItem" title="ADD" id="cKb-gl-tZT" userLabel="Add"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="addImg" destination="0rS-41-A9C" id="ct4-Xx-9fh"/>
+                        <outlet property="addPictureBtn" destination="6jy-s4-Wze" id="F6C-mj-Eye"/>
+                        <outlet property="addVoiceBtn" destination="oAI-gT-igq" id="exD-f8-YmH"/>
+                        <outlet property="btnAddImage" destination="6jy-s4-Wze" id="VVO-TR-wJP"/>
+                        <outlet property="categoryTxt" destination="r8x-I3-9tj" id="0lv-Ek-nrG"/>
+                        <outlet property="title" destination="JTj-UV-f5K" id="DMq-Ct-qe8"/>
+                        <outlet property="txtArea" destination="J8F-Nn-sYB" id="AXl-2d-3Sc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yKT-Yb-xBt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
