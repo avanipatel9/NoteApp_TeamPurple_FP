@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E97BD9024A1127E00BD9943 /* AddVoiceNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E97BD8F24A1127E00BD9943 /* AddVoiceNoteViewController.swift */; };
 		4757CCB5249E5E9A002786D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4757CCB4249E5E9A002786D9 /* AppDelegate.swift */; };
 		4757CCB7249E5E9A002786D9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4757CCB6249E5E9A002786D9 /* SceneDelegate.swift */; };
 		4757CCB9249E5E9A002786D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4757CCB8249E5E9A002786D9 /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E97BD8F24A1127E00BD9943 /* AddVoiceNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVoiceNoteViewController.swift; sourceTree = "<group>"; };
 		4757CCB1249E5E9A002786D9 /* NoteApp_TeamPurple_FP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteApp_TeamPurple_FP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4757CCB4249E5E9A002786D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4757CCB6249E5E9A002786D9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				4757CCBD249E5E9A002786D9 /* NoteApp_TeamPurple_FP.xcdatamodeld */,
 				A16BAFDA249E984000F4172E /* Note.swift */,
 				A16BAFDC249EC54500F4172E /* AddNotesViewController.swift */,
+				2E97BD8F24A1127E00BD9943 /* AddVoiceNoteViewController.swift */,
 			);
 			path = NoteApp_TeamPurple_FP;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 				4757CCB9249E5E9A002786D9 /* ViewController.swift in Sources */,
 				4757CCB5249E5E9A002786D9 /* AppDelegate.swift in Sources */,
 				4757CCB7249E5E9A002786D9 /* SceneDelegate.swift in Sources */,
+				2E97BD9024A1127E00BD9943 /* AddVoiceNoteViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
