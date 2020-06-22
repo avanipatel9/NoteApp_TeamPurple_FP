@@ -50,6 +50,59 @@ class AddVoiceNoteViewController: UIViewController {
             break
         }
     }
+    func setup_recorder()
+    {
+        if isAudioRecordingGranted
+        {
+            let session = AVAudioSession.sharedInstance()
+            do
+            {
+               
+                try session.setCategory(AVAudioSession.Category.playback, options: AVAudioSession.CategoryOptions.mixWithOthers)
+                try session.setActive(true)
+                let settings = [
+                    AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
+                    AVSampleRateKey: 44100,
+                    AVNumberOfChannelsKey: 2,
+                    AVEncoderAudioQualityKey:AVAudioQuality.high.rawValue
+                ]
+                audioRecorder = try AVAudioRecorder(url: getFileUrl(), settings: settings)
+                audioRecorder.delegate = self as? AVAudioRecorderDelegate
+                audioRecorder.isMeteringEnabled = true
+                audioRecorder.prepareToRecord()
+            }
+            catch let error {
+                display_alert(msg_title: "Error", msg_desc: error.localizedDescription, action_title: "OK")
+            }
+        }
+        else
+        {
+            display_alert(msg_title: "Error", msg_desc: "Don't have access to use your microphone.", action_title: "OK")
+        }
+    }
+    func display_alert(msg_title : String , msg_desc : String ,action_title : String)
+    {
+        let ac = UIAlertController(title: msg_title, message: msg_desc, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: action_title, style: .default)
+        {
+            (result : UIAlertAction) -> Void in
+        _ = self.navigationController?.popViewController(animated: true)
+        })
+        present(ac, animated: true)
+    }
+    func getDocumentsDirectory() -> URL
+    {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let documentsDirectory = paths[0]
+        return documentsDirectory
+    }
+
+    func getFileUrl() -> URL
+    {
+        let filename = "myRecording.m4a"
+        let filePath = getDocumentsDirectory().appendingPathComponent(filename)
+    return filePath
+    }
     
 
     /*
