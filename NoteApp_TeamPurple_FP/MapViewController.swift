@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import MapKit
+import CoreData
+import CoreLocation
 
 class MapViewController: UIViewController {
 
