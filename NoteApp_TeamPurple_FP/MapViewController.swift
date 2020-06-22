@@ -88,6 +88,12 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        <#code#>
+        let identifier="marker"
+        var view:MKMarkerAnnotationView
+        
+        if let dequeuedView=mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKMarkerAnnotationView{
+            dequeuedView.annotation=annotationCollection as? MKAnnotation;
+            view=dequeuedView
+        }
     }
 }
