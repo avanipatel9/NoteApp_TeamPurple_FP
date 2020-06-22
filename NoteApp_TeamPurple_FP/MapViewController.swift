@@ -31,6 +31,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         
+        mapView.delegate=self
         mapView.showsUserLocation=true
     }
     
