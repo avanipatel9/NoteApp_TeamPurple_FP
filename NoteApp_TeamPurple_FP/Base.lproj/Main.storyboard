@@ -178,6 +178,58 @@
             </objects>
             <point key="canvasLocation" x="1828.985507246377" y="124.55357142857142"/>
         </scene>
+        <!--Add Voice Note View Controller-->
+        <scene sceneID="0f4-Zh-8oP">
+            <objects>
+                <viewController id="GUT-fc-ndZ" customClass="AddVoiceNoteViewController" customModule="NoteApp_TeamPurple_FP" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5OS-R8-i5O">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6jN-FJ-W9m">
+                                <rect key="frame" x="71" y="150" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rXf-UA-fnU">
+                                <rect key="frame" x="192" y="433" width="30" height="30"/>
+                                <state key="normal" title="Play"/>
+                                <connections>
+                                    <action selector="btnActionPlay:" destination="GUT-fc-ndZ" eventType="touchUpInside" id="OlA-N1-7t8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ll6-Xv-EHZ">
+                                <rect key="frame" x="168" y="261" width="78" height="30"/>
+                                <state key="normal" title="Record"/>
+                                <connections>
+                                    <action selector="btnActionRecord:" destination="GUT-fc-ndZ" eventType="touchUpInside" id="Iyy-EF-t1e"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="rXf-UA-fnU" firstAttribute="centerX" secondItem="5OS-R8-i5O" secondAttribute="centerX" id="AGh-fY-2Yx"/>
+                            <constraint firstItem="Ll6-Xv-EHZ" firstAttribute="top" secondItem="GJL-RI-MN3" secondAttribute="top" constant="217" id="Pfq-0n-G3y"/>
+                            <constraint firstItem="6jN-FJ-W9m" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="GJL-RI-MN3" secondAttribute="leading" id="Q7O-lL-wn2"/>
+                            <constraint firstItem="Ll6-Xv-EHZ" firstAttribute="leading" secondItem="GJL-RI-MN3" secondAttribute="leading" constant="168" id="RR1-43-2DT"/>
+                            <constraint firstItem="6jN-FJ-W9m" firstAttribute="top" secondItem="GJL-RI-MN3" secondAttribute="top" constant="106" id="S5t-Qs-mkh"/>
+                            <constraint firstItem="GJL-RI-MN3" firstAttribute="trailing" secondItem="6jN-FJ-W9m" secondAttribute="trailing" constant="301" id="YN0-AF-mp4"/>
+                            <constraint firstItem="rXf-UA-fnU" firstAttribute="centerY" secondItem="5OS-R8-i5O" secondAttribute="centerY" id="jUQ-Iy-br7"/>
+                            <constraint firstItem="Ll6-Xv-EHZ" firstAttribute="centerX" secondItem="rXf-UA-fnU" secondAttribute="centerX" id="nEy-5M-r0x"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GJL-RI-MN3"/>
+                    </view>
+                    <connections>
+                        <outlet property="btnPlay" destination="rXf-UA-fnU" id="16o-7U-ljp"/>
+                        <outlet property="btnRecord" destination="Ll6-Xv-EHZ" id="gve-uG-pGF"/>
+                        <outlet property="recordingTimeLabel" destination="6jN-FJ-W9m" id="Ll2-Qq-gXB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sdg-El-2AP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1495.6521739130435" y="841.74107142857144"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="ScK-Xd-bCl">
             <objects>
