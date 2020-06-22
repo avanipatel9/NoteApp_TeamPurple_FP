@@ -119,6 +119,15 @@ class AddNotesViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
        func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return categoryPickerData.count
        }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return categoryPickerData[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        self.categoryPicker.isHidden = true;
+        txtCategory.text = categoryPickerData[row]
+    }
 
     /*
     // MARK: - Navigation
