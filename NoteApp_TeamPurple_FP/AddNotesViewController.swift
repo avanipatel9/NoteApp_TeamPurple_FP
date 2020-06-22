@@ -79,6 +79,39 @@ class AddNotesViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
            return d!
        }
     
+    
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
+           {
+
+               let location = locations.last! as CLLocation
+
+               /* you can use these values*/
+               lat = location.coordinate.latitude
+               long = location.coordinate.longitude
+            print("\(String(describing: lat)) \n \(String(describing: long))")
+       //        print(self.lat as Any);
+       //        print(self.long as Any);
+       //        print(timestamp as Any);
+               let geocoder = CLGeocoder()
+               var placemark: CLPlacemark?
+
+               geocoder.reverseGeocodeLocation(location) { (placemarks, error) in
+                 if error != nil {
+       //            print("something went horribly wrong")
+                 }
+                 if let placemarks = placemarks {
+                   placemark = placemarks.first
+                   DispatchQueue.main.async {
+       //              self.locationTF.text = (placemark?.locality!)
+                       //self.locationTF.text = ""
+
+                   }
+               }
+           }
+           }
+    
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
            return 1
        }
