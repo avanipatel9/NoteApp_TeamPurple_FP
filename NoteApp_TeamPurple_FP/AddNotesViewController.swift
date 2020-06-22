@@ -80,11 +80,11 @@ class AddNotesViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
        }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-           <#code#>
+           return 1
        }
        
        func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-           <#code#>
+        return categoryPickerData.count
        }
 
     /*
