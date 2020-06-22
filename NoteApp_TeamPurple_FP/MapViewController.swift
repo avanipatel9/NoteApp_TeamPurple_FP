@@ -20,7 +20,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     var items:[Note]=[];
     let locationManager=CLLocationManager()
     var dataManager:NSManagedObjectContext!
-    var annonationCollection=[MKAnnotation]()
+    var annotationCollection=[MKAnnotation]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +51,6 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     }
     */
     func readData(){
-        
         let request=NSFetchRequest<NSFetchRequestResult>(entityName: "Notes");
         do {
             let result=try dataManager.fetch(request);
@@ -72,6 +71,19 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         
         } catch {
             print("FAILED")
+        }
+        
+        for (index ,i) in items.enumerated(){
+            print(index)
+            print(i.latitude)
+            print(i.longitude)
+            
+            let location=CLLocation(latitude: i.latitude, longitude: i.longitude)
+            let myAnnotation=MKPointAnnotation()
+            myAnnotation.coordinate=location.coordinate
+            myAnnotation.title="\(i.title)"
+            annotationCollection.append(myAnnotation);
+            self.mapView.addAnnotation(myAnnotation);
         }
         
     }
