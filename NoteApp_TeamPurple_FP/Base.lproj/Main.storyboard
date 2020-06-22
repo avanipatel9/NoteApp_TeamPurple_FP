@@ -205,6 +205,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GJL-RI-MN3"/>
                     </view>
+                    <connections>
+                        <outlet property="btnPlay" destination="rXf-UA-fnU" id="16o-7U-ljp"/>
+                        <outlet property="btnRecord" destination="Ll6-Xv-EHZ" id="gve-uG-pGF"/>
+                        <outlet property="recordingTimeLabel" destination="6jN-FJ-W9m" id="Ll2-Qq-gXB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sdg-El-2AP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
