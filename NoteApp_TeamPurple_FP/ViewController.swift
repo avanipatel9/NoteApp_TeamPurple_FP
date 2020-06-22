@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate
+class ViewController: UIViewController, UISearchBarDelegate
 {
    
     var dataManager : NSManagedObjectContext!
@@ -27,8 +27,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.allNotesTV.delegate = self;
-         self.allNotesTV.dataSource = self;
+//        self.allNotesTV.delegate = self;
+//         self.allNotesTV.dataSource = self;
          self.searchBar.delegate = self;
          let   appDelegate = UIApplication.shared.delegate as! AppDelegate;
             dataManager = appDelegate.persistentContainer.viewContext;
@@ -36,13 +36,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-           <#code#>
-       }
-       
-       func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-           <#code#>
-       }
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//           return 0
+//       }
+//
+//       func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//
+//       }
 
 }//class end
 
