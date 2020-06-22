@@ -94,6 +94,11 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
         if let dequeuedView=mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKMarkerAnnotationView{
             dequeuedView.annotation=annotationCollection as? MKAnnotation;
             view=dequeuedView
+        }else{
+            view=MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            view.canShowCallout=true
+            view.rightCalloutAccessoryView=UIButton(type: .detailDisclosure)
         }
+        return view
     }
 }
