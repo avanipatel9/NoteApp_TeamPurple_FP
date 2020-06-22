@@ -231,10 +231,10 @@
             </objects>
             <point key="canvasLocation" x="1495.6521739130435" y="841.74107142857144"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="ScK-Xd-bCl">
             <objects>
-                <viewController id="TPW-FB-Ha8" sceneMemberID="viewController">
+                <viewController id="TPW-FB-Ha8" customClass="MapViewController" customModule="NoteApp_TeamPurple_FP" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="G9k-qU-TnW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -252,6 +252,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="F7L-2W-HAz"/>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="jaq-Ou-IPc" id="1lg-tM-fnL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MWn-6U-YLg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

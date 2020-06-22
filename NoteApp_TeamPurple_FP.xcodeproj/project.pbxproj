@@ -17,6 +17,7 @@
 		4757CCC4249E5E9B002786D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4757CCC2249E5E9B002786D9 /* LaunchScreen.storyboard */; };
 		A16BAFDB249E984000F4172E /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16BAFDA249E984000F4172E /* Note.swift */; };
 		A16BAFDD249EC54500F4172E /* AddNotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16BAFDC249EC54500F4172E /* AddNotesViewController.swift */; };
+		CC0BB94B24A1339D008E4B3F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0BB94A24A1339D008E4B3F /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		4757CCC5249E5E9C002786D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A16BAFDA249E984000F4172E /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		A16BAFDC249EC54500F4172E /* AddNotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNotesViewController.swift; sourceTree = "<group>"; };
+		CC0BB94A24A1339D008E4B3F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				A16BAFDA249E984000F4172E /* Note.swift */,
 				A16BAFDC249EC54500F4172E /* AddNotesViewController.swift */,
 				2E97BD8F24A1127E00BD9943 /* AddVoiceNoteViewController.swift */,
+				CC0BB94A24A1339D008E4B3F /* MapViewController.swift */,
 			);
 			path = NoteApp_TeamPurple_FP;
 			sourceTree = "<group>";
@@ -157,6 +160,7 @@
 				4757CCB5249E5E9A002786D9 /* AppDelegate.swift in Sources */,
 				4757CCB7249E5E9A002786D9 /* SceneDelegate.swift in Sources */,
 				2E97BD9024A1127E00BD9943 /* AddVoiceNoteViewController.swift in Sources */,
+				CC0BB94B24A1339D008E4B3F /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
