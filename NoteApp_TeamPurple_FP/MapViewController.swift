@@ -16,6 +16,12 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
     
     @IBOutlet weak var mapView: MKMapView!
     
+    var listArray=[NSManagedObject]()
+    var item:[Note]=[];
+    let locationManager=CLLocationManager()
+    var dataManager:NSManagedObjectContext!
+    var annonationCollection=[MKAnnotation]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
