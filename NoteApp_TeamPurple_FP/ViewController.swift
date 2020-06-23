@@ -116,8 +116,34 @@ class ViewController: UIViewController,  UITableViewDelegate, UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableView.dequeueReusableCell(withIdentifier: "mainCell") as! NotesCellTableViewCell
+         if issearch{
+             cell.notesTitle.text = "\(self.searchArray[indexPath.row].title)"
+             cell.notesDate.text = "\(self.searchArray[indexPath.row].creationDate.formatShortDate())"
+        }else{
+             cell.notesTitle.text = "\(self.items[indexPath.row].title)"
+             cell.notesDate.text = "\(self.items[indexPath.row].creationDate.formatShortDate())"
+             }
+         return cell
     }
 
 }//class end
 
+
+extension Date
+{
+    func formatDate() -> String
+    {
+     
+        let dateFormatterPrint = DateFormatter()
+        dateFormatterPrint.dateFormat = "MMM-dd, yyyy   HH:mm:ss"
+        
+        return dateFormatterPrint.string(from: self)
+    }
+    func formatShortDate() -> String{
+        let dateFormatterPrint = DateFormatter()
+        dateFormatterPrint.dateFormat = "MMM-dd, yyyy"
+        
+        return dateFormatterPrint.string(from: self)
+    }
+}
