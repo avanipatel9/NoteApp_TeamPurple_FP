@@ -42,6 +42,14 @@ class ViewController: UIViewController,  UITableViewDelegate, UITableViewDataSou
        dataManager = appDelegate.persistentContainer.viewContext;
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        items = []
+        searchArray = []
+        sortedArray = []
+        self.fetchData()
+        self.allNotesTV.reloadData()
+    }
 
     func sortNotes(plus details: SortDetails) {
         switch details {
