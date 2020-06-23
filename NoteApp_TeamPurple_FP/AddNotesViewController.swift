@@ -48,7 +48,7 @@ class AddNotesViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
 
                   categoryPicker.isHidden = true;
 
-                //  txtCategory.text = "\(categoryPickerData[6])"
+                 txtCategory.text = "\(categoryPickerData[6])"
                   txtCategory.isUserInteractionEnabled = true
                  txtCategory.inputView = categoryPicker
         

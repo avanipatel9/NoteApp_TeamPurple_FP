@@ -12,18 +12,24 @@ import CoreLocation
 class ViewNotesViewController: UIViewController {
   
    
+    @IBOutlet weak var lblCity: UILabel!
+    @IBOutlet weak var lblTitle: UILabel!
+    
+    @IBOutlet weak var lblCategory: UILabel!
+    @IBOutlet weak var lblDescription: UILabel!
+    
     var items: [Note] = [];
     @IBOutlet weak var notesImage: UIImageView!
     
-    @IBOutlet weak var txtViewNote: UITextView!
+
     
     @IBOutlet weak var lblCreationDate: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        txtViewNote.text = "Title: \(items[0].title)"
-        txtViewNote.text = "Category: \(items[0].noteCategory)"
-        txtViewNote.text = " \(items[0].noteText)"
+        lblTitle.text = "Title: \(items[0].title)"
+        lblCategory.text = "Category: \(items[0].noteCategory)"
+        lblDescription.text = " \(items[0].noteText)"
         notesImage.image = UIImage(data:items[0].imageData)
         //let d = getDate()
         lblCreationDate.text = "Created on :   \(items[0].creationDate.formatDate())"  //needs to format date
@@ -40,7 +46,7 @@ class ViewNotesViewController: UIViewController {
                     placemark = placemarks.first
                     DispatchQueue.main.async {
         //              self.locationTF.text = (placemark?.locality!)
-                        self.txtViewNote.text = " City: \(placemark!.locality!)"
+                        self.lblCity.text = " City: \(placemark!.locality!)"
 
                     }
                 }
