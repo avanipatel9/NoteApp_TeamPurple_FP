@@ -294,7 +294,7 @@
         <!--View Notes View Controller-->
         <scene sceneID="wnd-lu-n88">
             <objects>
-                <viewController id="f1S-iv-wQu" customClass="ViewNotesViewController" customModule="NoteApp_TeamPurple_FP" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewNotesVC" id="f1S-iv-wQu" customClass="ViewNotesViewController" customModule="NoteApp_TeamPurple_FP" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fzT-gd-YlW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -356,6 +356,11 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="lblCreationDate" destination="fzT-gd-YlW" id="5Iu-aM-JCl"/>
+                        <outlet property="notesImage" destination="RAf-VF-HEw" id="U0o-gO-k3V"/>
+                        <outlet property="txtViewNote" destination="eQ8-N1-p2L" id="dnb-fC-4Cc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cdw-qD-Hcq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

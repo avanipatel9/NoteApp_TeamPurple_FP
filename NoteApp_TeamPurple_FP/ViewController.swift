@@ -159,6 +159,20 @@ class ViewController: UIViewController,  UITableViewDelegate, UITableViewDataSou
                // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
            }
        }
+     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    //       if issearch == false{
+    //            view.endEditing(true)
+               let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ViewNotesVC") as? ViewNotesViewController
+        if issearch{
+            vc?.items = [searchArray[indexPath.row]]
+            
+        }else{
+              vc?.items = [items[indexPath.row]]
+        }
+               //vc?.items = [items[indexPath.row]]
+               self.navigationController?.pushViewController(vc!, animated: true)
+    //       }
+       }
 
 }//class end
 

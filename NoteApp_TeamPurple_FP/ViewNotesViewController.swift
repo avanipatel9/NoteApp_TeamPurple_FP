@@ -9,7 +9,14 @@
 import UIKit
 
 class ViewNotesViewController: UIViewController {
-
+  
+   
+    var items: [Note] = [];
+    @IBOutlet weak var notesImage: UIImageView!
+    
+    @IBOutlet weak var txtViewNote: UITextView!
+    @IBOutlet var lblCreationDate: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
