@@ -108,7 +108,11 @@ class ViewController: UIViewController,  UITableViewDelegate, UITableViewDataSou
         }
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        if issearch
+        {  return searchArray.count;
+        }else{
+           return items.count;
+         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
