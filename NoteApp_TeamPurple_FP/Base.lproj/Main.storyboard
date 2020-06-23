@@ -357,7 +357,7 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="lblCreationDate" destination="fzT-gd-YlW" id="5Iu-aM-JCl"/>
+                        <outlet property="lblCreationDate" destination="e2Z-9R-D2b" id="5RJ-6d-ftl"/>
                         <outlet property="notesImage" destination="RAf-VF-HEw" id="U0o-gO-k3V"/>
                         <outlet property="txtViewNote" destination="eQ8-N1-p2L" id="dnb-fC-4Cc"/>
                     </connections>
