@@ -53,6 +53,33 @@ class ViewController: UIViewController,  UITableViewDelegate, UITableViewDataSou
     allNotesTV.reloadData()
     }
     
+    func fetchData() {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Notes");
+                   do {
+                       let result = try dataManager.fetch(request);
+                       print(result.count)
+                           listArray = result as! [NSManagedObject]
+                          // print(listArray[0])
+                           for item in listArray {
+                               let noteData = Note();
+                               
+                            noteData.noteText = item.value(forKey: "text") as! String
+                            noteData.title = item.value(forKey: "title") as! String
+                            noteData.noteCategory = item.value(forKey: "category") as! String
+                            if let imageData = item.value(forKey: "picture") as? Data{
+                               noteData.imageData = imageData
+                            }
+                            noteData.creationDate = item.value(forKey: "creationDate") as! Date
+                            noteData.longitude = item.value(forKey: "longitude") as! Double
+                           noteData.latitude = item.value(forKey: "latitude") as! Double
+                               items.append(noteData)
+                       }
+                   } catch {
+       
+                       print("Failed")
+                   }
+    }
+    
     @IBAction func actionSortingSegment(_ sender: UISegmentedControl) {
         let getIndex = sortingSegment.selectedSegmentIndex
         let byTitle = items.sorted(by: { $0.title.compare($1.title) == .orderedAscending })
