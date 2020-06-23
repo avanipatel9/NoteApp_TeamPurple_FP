@@ -278,6 +278,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="F7L-2W-HAz"/>
                     </view>
+                    <navigationItem key="navigationItem" id="EXr-3M-YIs"/>
                     <connections>
                         <outlet property="mapView" destination="jaq-Ou-IPc" id="1lg-tM-fnL"/>
                     </connections>
@@ -341,7 +342,14 @@
                         <barButtonItem image="square.and.pencil" catalog="system" id="Ghg-DI-QXq"/>
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="hpv-Vu-aJJ">
-                        <barButtonItem key="rightBarButtonItem" image="square.and.arrow.up" catalog="system" id="fT2-Y7-HIB"/>
+                        <rightBarButtonItems>
+                            <barButtonItem image="square.and.arrow.up" catalog="system" id="fT2-Y7-HIB"/>
+                            <barButtonItem image="map" catalog="system" id="HhF-Q2-hTw">
+                                <connections>
+                                    <segue destination="TPW-FB-Ha8" kind="show" id="Jzm-5Z-Lkp"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
@@ -371,6 +379,7 @@
     <resources>
         <image name="camera" catalog="system" width="128" height="96"/>
         <image name="checkmark.circle" catalog="system" width="128" height="121"/>
+        <image name="map" catalog="system" width="128" height="113"/>
         <image name="pencil.tip.crop.circle" catalog="system" width="128" height="121"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <image name="square.and.pencil" catalog="system" width="128" height="118"/>
