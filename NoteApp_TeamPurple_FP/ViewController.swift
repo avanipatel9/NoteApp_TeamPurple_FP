@@ -96,7 +96,7 @@ class ViewController: UIViewController,  UITableViewDelegate, UITableViewDataSou
         case 0:
             sortedArray = byTitle
             self.sortNotes(plus: .bytitle)
-            // sort by Title
+            // sort by Title/Users/user174608/Desktop/NoteApp_TeamPurple_FP/NoteApp_TeamPurple_FP/ViewController.swift:119:82: Use of undeclared type 'NotesCellTableViewCell'
             break
         case 1:
             sortedArray = byDate

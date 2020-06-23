@@ -37,6 +37,7 @@ class AddNotesViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
     
     
     @IBOutlet weak var addVoiceBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -49,7 +50,7 @@ class AddNotesViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
                   categoryPicker.isHidden = true;
 
                  txtCategory.text = "\(categoryPickerData[6])"
-                  txtCategory.isUserInteractionEnabled = true
+                 // txtCategory.isUserInteractionEnabled = true
                  txtCategory.inputView = categoryPicker
         
                   noteDate = getDate()
@@ -129,7 +130,7 @@ class AddNotesViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
     
     
     @IBAction func selectCategory(_ sender: Any) {
-        self.categoryPicker.isHidden = false
+        //self.categoryPicker.isHidden = false
         
     }
     

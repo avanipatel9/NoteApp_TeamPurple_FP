@@ -159,7 +159,7 @@
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pPd-MK-mOh">
-                                <rect key="frame" x="98" y="749" width="219" height="137"/>
+                                <rect key="frame" x="99" y="764" width="216" height="43"/>
                             </pickerView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
