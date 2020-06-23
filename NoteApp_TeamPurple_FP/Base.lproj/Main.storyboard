@@ -246,7 +246,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GJL-RI-MN3"/>
                     </view>
-                    <navigationItem key="navigationItem" id="jzn-5f-FOC"/>
+                    <navigationItem key="navigationItem" id="jzn-5f-FOC">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="iZt-Aq-w2l"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="btnPlay" destination="rXf-UA-fnU" id="16o-7U-ljp"/>
                         <outlet property="btnRecord" destination="Ll6-Xv-EHZ" id="gve-uG-pGF"/>
