@@ -48,8 +48,9 @@ class AddNotesViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
 
                   categoryPicker.isHidden = true;
 
-                  txtCategory.text = "\(categoryPickerData[6])"
-                  txtCategory.isUserInteractionEnabled = false
+                //  txtCategory.text = "\(categoryPickerData[6])"
+                  txtCategory.isUserInteractionEnabled = true
+                 txtCategory.inputView = categoryPicker
         
                   noteDate = getDate()
         
@@ -129,6 +130,7 @@ class AddNotesViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
     
     @IBAction func selectCategory(_ sender: Any) {
         self.categoryPicker.isHidden = false
+        
     }
     
     
@@ -151,7 +153,7 @@ class AddNotesViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
                      newEntity.setValue(imageData, forKey: "picture")
                  }
                  newEntity.setValue(noteDate, forKey: "creationDate")
-                 newEntity.setValue(lat, forKey: "latitude")
+                 newEntity.setValue(lat, forKey: "lattitude")
                  newEntity.setValue(long, forKey: "longitude")
                  
              }

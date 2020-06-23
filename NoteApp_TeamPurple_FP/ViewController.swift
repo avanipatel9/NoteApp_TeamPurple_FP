@@ -79,7 +79,7 @@ class ViewController: UIViewController,  UITableViewDelegate, UITableViewDataSou
                             }
                             noteData.creationDate = item.value(forKey: "creationDate") as! Date
                             noteData.longitude = item.value(forKey: "longitude") as! Double
-                           noteData.latitude = item.value(forKey: "latitude") as! Double
+                           noteData.latitude = item.value(forKey: "lattitude") as! Double
                                items.append(noteData)
                        }
                    } catch {
