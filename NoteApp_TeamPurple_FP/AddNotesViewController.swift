@@ -50,8 +50,8 @@ class AddNotesViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
                   categoryPicker.isHidden = true;
 
                  txtCategory.text = "\(categoryPickerData[6])"
-                 // txtCategory.isUserInteractionEnabled = true
-                 txtCategory.inputView = categoryPicker
+                 txtCategory.isUserInteractionEnabled = false
+                // txtCategory.inputView = categoryPicker
         
                   noteDate = getDate()
         
@@ -129,9 +129,10 @@ class AddNotesViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
     }
     
     
-    @IBAction func selectCategory(_ sender: Any) {
-        //self.categoryPicker.isHidden = false
-        
+   
+    
+    @IBAction func btnSelectCategory(_ sender: Any) {
+        self.categoryPicker.isHidden = false
     }
     
     

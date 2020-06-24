@@ -79,7 +79,7 @@ class ViewController: UIViewController,  UITableViewDelegate, UITableViewDataSou
                             }
                             noteData.creationDate = item.value(forKey: "creationDate") as! Date
                             noteData.longitude = item.value(forKey: "longitude") as! Double
-                           noteData.latitude = item.value(forKey: "lattitude") as! Double
+                           noteData.latitude = item.value(forKey: "latitude") as! Double
                                items.append(noteData)
                        }
                    } catch {
@@ -128,37 +128,37 @@ class ViewController: UIViewController,  UITableViewDelegate, UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-           if editingStyle == .delete {
-                let   appdelegate = UIApplication.shared.delegate as! AppDelegate
-                let context = appdelegate.persistentContainer.viewContext
-                let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Notes")
-                do{
-                   let x = try context.fetch(fetchRequest)
-                   let result = x as! [Note]
-                   print("deleted \(result[indexPath.row])")
-                   context.delete(result[indexPath.row])
-                   print(indexPath.row )
-                   do
-                   {
-                      try context.save()
-                   }
-                   catch{
-                       
-                       //Something bad happened.
-                   }
-                   items.remove(at: indexPath.row)
-                   tableView.deleteRows(at: [indexPath], with: .fade)
-                   tableView.reloadData()
-                   
-               }
-               catch
-               {
-                   
-               }
-           } else if editingStyle == .insert {
-               // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-           }
-       }
+        if editingStyle == .delete {
+             let   appdelegate = UIApplication.shared.delegate as! AppDelegate
+             let context = appdelegate.persistentContainer.viewContext
+             let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Notes")
+             do{
+                let x = try context.fetch(fetchRequest)
+                let result = x as! [Notes]
+                print("deleted \(result[indexPath.row])")
+                context.delete(result[indexPath.row])
+                print(indexPath.row )
+                do
+                {
+                   try context.save()
+                }
+                catch{
+                    
+                    //Something bad happened.
+                }
+                items.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+                tableView.reloadData()
+                
+            }
+            catch
+            {
+                
+            }
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }
+    }
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     //       if issearch == false{
     //            view.endEditing(true)
