@@ -173,7 +173,29 @@ class ViewController: UIViewController,  UITableViewDelegate, UITableViewDataSou
     //       }
        }
     
-    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String)
+       {
+           let filtered = items.filter { $0.title.lowercased().contains(searchText.lowercased())}
+           let filtered2 = items.filter { $0.noteText.lowercased().contains(searchText.lowercased())}
+           if filtered.count>0
+           {
+               searchArray  = filtered
+               issearch = true
+           }else if(filtered2.count>0)
+           {
+               searchArray  = filtered2
+               issearch = true
+           }
+           else
+           {
+               issearch = false
+           }
+           self.allNotesTV.reloadData();
+       }
+       func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool
+       {
+           return true;
+       }
 
 }//class end
 
