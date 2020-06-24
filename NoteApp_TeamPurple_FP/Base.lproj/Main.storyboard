@@ -24,7 +24,7 @@
                                     <textInputTraits key="textInputTraits"/>
                                 </searchBar>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="mainCell" id="V9m-nh-oPk" customClass="NotesCellTableViewCell" customModule="NoteApp_TeamPurple_FP" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="mainCell" id="V9m-nh-oPk" customClass="NoteCellTableViewCell" customModule="NoteApp_TeamPurple_FP" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="72" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="V9m-nh-oPk" id="tKK-8N-q0b">
@@ -56,8 +56,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="notesDate" destination="EmS-Jt-QIu" id="je9-d7-EJq"/>
-                                            <outlet property="notesTitle" destination="Tw9-cK-z8r" id="ytq-uJ-JLR"/>
+                                            <outlet property="notesDate" destination="EmS-Jt-QIu" id="arb-Dd-x0w"/>
+                                            <outlet property="notesTitle" destination="Tw9-cK-z8r" id="a1W-8k-gdY"/>
                                             <segue destination="f1S-iv-wQu" kind="show" id="xhW-38-Uvv"/>
                                         </connections>
                                     </tableViewCell>

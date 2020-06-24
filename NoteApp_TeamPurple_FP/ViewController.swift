@@ -116,7 +116,7 @@ class ViewController: UIViewController,  UITableViewDelegate, UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "mainCell") as! NotesCellTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "mainCell") as! NoteCellTableViewCell
          if issearch{
              cell.notesTitle.text = "\(self.searchArray[indexPath.row].title)"
              cell.notesDate.text = "\(self.searchArray[indexPath.row].creationDate.formatShortDate())"
@@ -134,7 +134,7 @@ class ViewController: UIViewController,  UITableViewDelegate, UITableViewDataSou
                 let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Notes")
                 do{
                    let x = try context.fetch(fetchRequest)
-                   let result = x as! [Notes]
+                   let result = x as! [Note]
                    print("deleted \(result[indexPath.row])")
                    context.delete(result[indexPath.row])
                    print(indexPath.row )
