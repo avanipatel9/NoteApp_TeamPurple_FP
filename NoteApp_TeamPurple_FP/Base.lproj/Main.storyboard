@@ -47,6 +47,10 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="notesDate" destination="7D7-Yr-83t" id="SKm-UC-5dy"/>
+                                            <outlet property="notesTitle" destination="5f4-Wc-wBA" id="eRz-g7-vvd"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

@@ -117,16 +117,15 @@ class ViewController: UIViewController,  UITableViewDelegate, UITableViewDataSou
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "mainCell") as! NoteCellTableViewCell
-         if issearch{
-             cell.notesTitle.text = "\(self.searchArray[indexPath.row].title)"
-             cell.notesDate.text = "\(self.searchArray[indexPath.row].creationDate.formatShortDate())"
-        }else{
-             cell.notesTitle.text = "\(self.items[indexPath.row].title)"
-             cell.notesDate.text = "\(self.items[indexPath.row].creationDate.formatShortDate())"
-             }
-         return cell
-    }
-    
+           if issearch{
+               cell.notesTitle.text = "\(self.searchArray[indexPath.row].title)"
+               cell.notesDate.text = "\(self.searchArray[indexPath.row].creationDate.formatShortDate())"
+          }else{
+               cell.notesTitle.text = "\(self.items[indexPath.row].title)"
+               cell.notesDate.text = "\(self.items[indexPath.row].creationDate.formatShortDate())"
+               }
+           return cell
+       }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
              let   appdelegate = UIApplication.shared.delegate as! AppDelegate
