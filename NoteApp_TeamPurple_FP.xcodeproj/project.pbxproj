@@ -15,6 +15,7 @@
 		4757CCBF249E5E9A002786D9 /* NoteApp_TeamPurple_FP.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4757CCBD249E5E9A002786D9 /* NoteApp_TeamPurple_FP.xcdatamodeld */; };
 		4757CCC1249E5E9B002786D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4757CCC0249E5E9B002786D9 /* Assets.xcassets */; };
 		4757CCC4249E5E9B002786D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4757CCC2249E5E9B002786D9 /* LaunchScreen.storyboard */; };
+		4768DF6224A3B4F800EECEF2 /* NoteCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4768DF6124A3B4F800EECEF2 /* NoteCellTableViewCell.swift */; };
 		47B8755624A16F8600122A37 /* ViewNotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B8755524A16F8600122A37 /* ViewNotesViewController.swift */; };
 		A16BAFDB249E984000F4172E /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16BAFDA249E984000F4172E /* Note.swift */; };
 		A16BAFDD249EC54500F4172E /* AddNotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16BAFDC249EC54500F4172E /* AddNotesViewController.swift */; };
@@ -32,6 +33,7 @@
 		4757CCC0249E5E9B002786D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4757CCC3249E5E9B002786D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4757CCC5249E5E9C002786D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4768DF6124A3B4F800EECEF2 /* NoteCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCellTableViewCell.swift; sourceTree = "<group>"; };
 		47B8755524A16F8600122A37 /* ViewNotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewNotesViewController.swift; sourceTree = "<group>"; };
 		A16BAFDA249E984000F4172E /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		A16BAFDC249EC54500F4172E /* AddNotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNotesViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				2E97BD8F24A1127E00BD9943 /* AddVoiceNoteViewController.swift */,
 				CC0BB94A24A1339D008E4B3F /* MapViewController.swift */,
 				47B8755524A16F8600122A37 /* ViewNotesViewController.swift */,
+				4768DF6124A3B4F800EECEF2 /* NoteCellTableViewCell.swift */,
 			);
 			path = NoteApp_TeamPurple_FP;
 			sourceTree = "<group>";
@@ -163,6 +166,7 @@
 				47B8755624A16F8600122A37 /* ViewNotesViewController.swift in Sources */,
 				4757CCB5249E5E9A002786D9 /* AppDelegate.swift in Sources */,
 				4757CCB7249E5E9A002786D9 /* SceneDelegate.swift in Sources */,
+				4768DF6224A3B4F800EECEF2 /* NoteCellTableViewCell.swift in Sources */,
 				2E97BD9024A1127E00BD9943 /* AddVoiceNoteViewController.swift in Sources */,
 				CC0BB94B24A1339D008E4B3F /* MapViewController.swift in Sources */,
 			);
