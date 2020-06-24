@@ -37,6 +37,7 @@ class AddNotesViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
     
     
     @IBOutlet weak var addVoiceBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -48,8 +49,9 @@ class AddNotesViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
 
                   categoryPicker.isHidden = true;
 
-                  txtCategory.text = "\(categoryPickerData[6])"
-                  txtCategory.isUserInteractionEnabled = false
+                 txtCategory.text = "\(categoryPickerData[6])"
+                 // txtCategory.isUserInteractionEnabled = true
+                 txtCategory.inputView = categoryPicker
         
                   noteDate = getDate()
         
@@ -128,13 +130,73 @@ class AddNotesViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
     
     
     @IBAction func selectCategory(_ sender: Any) {
-        self.categoryPicker.isHidden = false
+        //self.categoryPicker.isHidden = false
+        
     }
     
     
     @IBAction func btnAdd(_ sender: Any) {
+        textString = txtAdd.text
+         txtTitle = edtTitle.text!
+         txtnoteCategory = txtCategory.text!
+        
+         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+         let entity = NSEntityDescription.entity(forEntityName: "Notes", in: context)
+         let newEntity = NSManagedObject(entity: entity!, insertInto: context)
+         if (txtTitle != "")
+         {
+             if(textString != "")
+             {
+                  newEntity.setValue(txtTitle, forKey: "title")
+                  newEntity.setValue(textString, forKey: "text")
+                 newEntity.setValue(txtnoteCategory, forKey: "category")
+                 if !(imageData.isEmpty){
+                     newEntity.setValue(imageData, forKey: "picture")
+                 }
+                 newEntity.setValue(noteDate, forKey: "creationDate")
+                 newEntity.setValue(lat, forKey: "lattitude")
+                 newEntity.setValue(long, forKey: "longitude")
+                 
+             }
+             else
+             {
+                 showAlert(alertCase: 2)
+                 
+             }
+         }
+         else{
+             showAlert(alertCase: 1)
+             
+         }
+        
+             
+                do {
+                    try context.save()
+                    print("saved")
+                 self.navigationController?.popViewController(animated: true)
+                } catch  {
+            print("Failed")
+                }
         
     }
+    
+    func showAlert(alertCase : Int) {
+           switch alertCase {
+           case 1:
+               let alert = UIAlertController(title: "NoteApp", message: "Please add title of the note.", preferredStyle: .alert)
+               alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+               self.present(alert, animated: true)
+           case 2:
+               let alert = UIAlertController(title: "NoteApp", message: "Please add description of the note.", preferredStyle: .alert)
+               alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+               self.present(alert, animated: true)
+           default:
+               let alert = UIAlertController(title: "NoteApp", message: "Please add neccessary information of the note.", preferredStyle: .alert)
+               alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+               self.present(alert, animated: true)
+           }
+             
+         }
     
     @IBAction func btnChooseImage(_ sender: Any) {
         let alert = UIAlertController(title: "NoteIt!", message: "Pick image from", preferredStyle: .alert)

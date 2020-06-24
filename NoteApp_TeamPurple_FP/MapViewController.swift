@@ -64,7 +64,7 @@ class MapViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDel
                 let noteModel=Note()
                 noteModel.title=item.value(forKey: "title") as! String
                 noteModel.noteText=item.value(forKey: "text") as! String
-                noteModel.latitude=item.value(forKey: "latitude") as! Double
+                noteModel.latitude=item.value(forKey: "lattitude") as! Double
                 noteModel.longitude=item.value(forKey: "longitude") as! Double
                 items.append(noteModel)
             }

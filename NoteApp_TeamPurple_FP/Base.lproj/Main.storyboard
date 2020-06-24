@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--My Notes-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NoteApp_TeamPurple_FP" customModuleProvider="target" sceneMemberID="viewController">
@@ -24,7 +24,7 @@
                                     <textInputTraits key="textInputTraits"/>
                                 </searchBar>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="V9m-nh-oPk">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="mainCell" id="V9m-nh-oPk" customClass="NotesCellTableViewCell" customModule="NoteApp_TeamPurple_FP" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="72" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="V9m-nh-oPk" id="tKK-8N-q0b">
@@ -56,6 +56,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="notesDate" destination="EmS-Jt-QIu" id="je9-d7-EJq"/>
+                                            <outlet property="notesTitle" destination="Tw9-cK-z8r" id="ytq-uJ-JLR"/>
                                             <segue destination="f1S-iv-wQu" kind="show" id="xhW-38-Uvv"/>
                                         </connections>
                                     </tableViewCell>
@@ -89,7 +91,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="nXX-q2-dpw">
+                    <navigationItem key="navigationItem" title="My Notes" id="nXX-q2-dpw">
                         <barButtonItem key="rightBarButtonItem" image="square.and.pencil" catalog="system" id="Nj9-vI-d7O">
                             <connections>
                                 <segue destination="PYO-AF-YRA" kind="show" id="fNA-rX-vgV"/>
@@ -156,8 +158,8 @@
                                     <segue destination="GUT-fc-ndZ" kind="show" id="sGO-H8-2RS"/>
                                 </connections>
                             </button>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pPd-MK-mOh">
-                                <rect key="frame" x="0.0" y="646" width="414" height="216"/>
+                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pPd-MK-mOh">
+                                <rect key="frame" x="99" y="764" width="216" height="43"/>
                             </pickerView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -292,7 +294,7 @@
         <!--View Notes View Controller-->
         <scene sceneID="wnd-lu-n88">
             <objects>
-                <viewController id="f1S-iv-wQu" customClass="ViewNotesViewController" customModule="NoteApp_TeamPurple_FP" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewNotesVC" id="f1S-iv-wQu" customClass="ViewNotesViewController" customModule="NoteApp_TeamPurple_FP" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fzT-gd-YlW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -303,30 +305,47 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eQ8-N1-p2L">
-                                <rect key="frame" x="20" y="159" width="374" height="379"/>
-                                <color key="backgroundColor" systemColor="systemGray3Color" red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RAf-VF-HEw">
                                 <rect key="frame" x="20" y="558" width="374" height="226"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="226" id="Ju9-aD-64q"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="lblTitle" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Who-W1-BDd">
+                                <rect key="frame" x="52" y="169" width="342" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="lbl Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8wn-WQ-NTB">
+                                <rect key="frame" x="52" y="273" width="334" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="lblCity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ohf-n1-byI">
+                                <rect key="frame" x="52" y="336" width="334" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="lbl Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lye-aJ-ZYk">
+                                <rect key="frame" x="52" y="208" width="334" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Ap6-63-aaY" firstAttribute="trailing" secondItem="RAf-VF-HEw" secondAttribute="trailing" constant="20" id="5PO-ud-cqQ"/>
                             <constraint firstItem="e2Z-9R-D2b" firstAttribute="leading" secondItem="Ap6-63-aaY" secondAttribute="leading" id="8It-Mi-782"/>
                             <constraint firstItem="Ap6-63-aaY" firstAttribute="trailing" secondItem="e2Z-9R-D2b" secondAttribute="trailing" id="Dni-fd-aPV"/>
-                            <constraint firstItem="RAf-VF-HEw" firstAttribute="top" secondItem="eQ8-N1-p2L" secondAttribute="bottom" constant="20" id="fgf-Vr-l24"/>
-                            <constraint firstItem="Ap6-63-aaY" firstAttribute="trailing" secondItem="eQ8-N1-p2L" secondAttribute="trailing" constant="20" id="h04-cI-gAv"/>
                             <constraint firstItem="RAf-VF-HEw" firstAttribute="leading" secondItem="Ap6-63-aaY" secondAttribute="leading" constant="20" id="iPO-DC-8cZ"/>
-                            <constraint firstItem="eQ8-N1-p2L" firstAttribute="top" secondItem="e2Z-9R-D2b" secondAttribute="bottom" constant="20" id="lJw-7R-u2v"/>
-                            <constraint firstItem="eQ8-N1-p2L" firstAttribute="leading" secondItem="Ap6-63-aaY" secondAttribute="leading" constant="20" id="oyP-gl-Hb8"/>
                             <constraint firstItem="e2Z-9R-D2b" firstAttribute="top" secondItem="Ap6-63-aaY" secondAttribute="top" constant="30" id="pg0-4c-Iwl"/>
                             <constraint firstItem="Ap6-63-aaY" firstAttribute="bottom" secondItem="RAf-VF-HEw" secondAttribute="bottom" constant="29" id="v8O-mU-roH"/>
                         </constraints>
@@ -354,6 +373,14 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="lblCategory" destination="lye-aJ-ZYk" id="VVr-bv-vnk"/>
+                        <outlet property="lblCity" destination="ohf-n1-byI" id="rHr-e1-FGM"/>
+                        <outlet property="lblCreationDate" destination="e2Z-9R-D2b" id="5RJ-6d-ftl"/>
+                        <outlet property="lblDescription" destination="8wn-WQ-NTB" id="KGy-7C-C0n"/>
+                        <outlet property="lblTitle" destination="Who-W1-BDd" id="1kg-5X-uwR"/>
+                        <outlet property="notesImage" destination="RAf-VF-HEw" id="U0o-gO-k3V"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cdw-qD-Hcq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
