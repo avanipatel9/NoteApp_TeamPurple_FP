@@ -137,47 +137,47 @@ class AddNotesViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
     
     
     @IBAction func btnAdd(_ sender: Any) {
-        textString = txtAdd.text
-         txtTitle = edtTitle.text!
-         txtnoteCategory = txtCategory.text!
-        
-         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-         let entity = NSEntityDescription.entity(forEntityName: "Notes", in: context)
-         let newEntity = NSManagedObject(entity: entity!, insertInto: context)
-         if (txtTitle != "")
-         {
-             if(textString != "")
-             {
-                  newEntity.setValue(txtTitle, forKey: "title")
-                  newEntity.setValue(textString, forKey: "text")
-                 newEntity.setValue(txtnoteCategory, forKey: "category")
-                 if !(imageData.isEmpty){
-                     newEntity.setValue(imageData, forKey: "picture")
-                 }
-                 newEntity.setValue(noteDate, forKey: "creationDate")
-                 newEntity.setValue(lat, forKey: "lattitude")
-                 newEntity.setValue(long, forKey: "longitude")
-                 
+     textString = txtAdd.text
+      txtTitle = edtTitle.text!
+      txtnoteCategory = txtCategory.text!
+     
+      let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+      let entity = NSEntityDescription.entity(forEntityName: "Notes", in: context)
+      let newEntity = NSManagedObject(entity: entity!, insertInto: context)
+      if (txtTitle != "")
+      {
+          if(textString != "")
+          {
+               newEntity.setValue(txtTitle, forKey: "title")
+               newEntity.setValue(textString, forKey: "text")
+              newEntity.setValue(txtnoteCategory, forKey: "category")
+              if !(imageData.isEmpty){
+                  newEntity.setValue(imageData, forKey: "picture")
+              }
+              newEntity.setValue(noteDate, forKey: "creationDate")
+              newEntity.setValue(lat, forKey: "latitude")
+              newEntity.setValue(long, forKey: "longitude")
+              
+          }
+          else
+          {
+              showAlert(alertCase: 2)
+              
+          }
+      }
+      else{
+          showAlert(alertCase: 1)
+          
+      }
+     
+          
+             do {
+                 try context.save()
+                 print("saved")
+              self.navigationController?.popViewController(animated: true)
+             } catch  {
+         print("Failed")
              }
-             else
-             {
-                 showAlert(alertCase: 2)
-                 
-             }
-         }
-         else{
-             showAlert(alertCase: 1)
-             
-         }
-        
-             
-                do {
-                    try context.save()
-                    print("saved")
-                 self.navigationController?.popViewController(animated: true)
-                } catch  {
-            print("Failed")
-                }
         
     }
     

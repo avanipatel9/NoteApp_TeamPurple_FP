@@ -6,8 +6,6 @@
 	<string>You must give permission to use this feature.</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>You must give permission to use this feature.</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>You must give permission to use this feature.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -66,7 +64,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSLocationUsageDescription</key>
+	<string></string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>There is no really need to give permission</string>
+	<string></string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string></string>
 </dict>
 </plist>
