@@ -47,7 +47,7 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.87598445840000005" green="0.65314102470000002" blue="0.98733950429999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.95313993922359141" green="0.82507650397276711" blue="0.98733950429999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="notesDate" destination="7D7-Yr-83t" id="SKm-UC-5dy"/>
                                             <outlet property="notesTitle" destination="5f4-Wc-wBA" id="eRz-g7-vvd"/>
@@ -74,7 +74,7 @@
                                 </items>
                             </toolbar>
                         </subviews>
-                        <color key="backgroundColor" red="0.87598445840000005" green="0.65314102470000002" blue="0.98733950429999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.95313993919999995" green="0.82507650399999999" blue="0.98733950429999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="7TO-68-I9d" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="54Q-Bl-Rco"/>
                             <constraint firstItem="mrF-jh-GDK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6ol-DR-A3l"/>
@@ -150,7 +150,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.87598445840000005" green="0.65314102470000002" blue="0.98733950429999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.95313993919999995" green="0.82507650399999999" blue="0.98733950429999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="YNe-Rr-got" firstAttribute="trailing" secondItem="TZh-hX-ZWi" secondAttribute="trailing" constant="16" id="0nC-fm-xcq"/>
                             <constraint firstItem="YNe-Rr-got" firstAttribute="trailing" secondItem="i30-Iw-2Ue" secondAttribute="trailing" constant="16" id="9ee-4L-0Mx"/>
@@ -287,7 +287,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.87598445840000005" green="0.65314102470000002" blue="0.98733950429999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.95313993919999995" green="0.82507650399999999" blue="0.98733950429999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="Cbc-oa-l6q"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add Note" id="pt8-Fg-qrG">
@@ -343,7 +343,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.87598445840000005" green="0.65314102470000002" blue="0.98733950429999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.95313993919999995" green="0.82507650399999999" blue="0.98733950429999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="t3f-DV-1Ze"/>
                     </view>
                     <navigationItem key="navigationItem" id="xuM-kq-Eli"/>
@@ -413,7 +413,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="rF3-es-zlv"/>
+        <segue reference="aJN-hz-4az"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="map.fill" catalog="system" width="128" height="113"/>
