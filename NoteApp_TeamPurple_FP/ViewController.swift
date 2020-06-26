@@ -127,7 +127,7 @@ class ViewController: UIViewController,  UITableViewDelegate, UITableViewDataSou
            return cell
        }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
+        if editingStyle ==  .delete {
              let   appdelegate = UIApplication.shared.delegate as! AppDelegate
              let context = appdelegate.persistentContainer.viewContext
              let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Notes")
