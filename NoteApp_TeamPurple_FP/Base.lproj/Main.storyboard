@@ -16,36 +16,41 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7TO-68-I9d">
-                                <rect key="frame" x="8" y="96" width="398" height="758"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="766"/>
                                 <color key="backgroundColor" red="0.95313993919999995" green="0.82507650399999999" blue="0.98733950429999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <searchBar key="tableHeaderView" contentMode="redraw" placeholder="search here" id="ZXU-KL-1jy">
-                                    <rect key="frame" x="0.0" y="0.0" width="398" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </searchBar>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="mainCell" rowHeight="201" id="c6x-76-wpT" customClass="NoteCellTableViewCell" customModule="NoteApp_TeamPurple_FP" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="72" width="398" height="201"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="mainCell" rowHeight="201" translatesAutoresizingMaskIntoConstraints="NO" id="c6x-76-wpT" customClass="NoteCellTableViewCell" customModule="NoteApp_TeamPurple_FP" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="72" width="414" height="201"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="c6x-76-wpT" id="iUg-d0-iuS">
-                                            <rect key="frame" x="0.0" y="0.0" width="398" height="201"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="201"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5f4-Wc-wBA">
-                                                    <rect key="frame" x="20" y="11" width="184" height="38"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5f4-Wc-wBA">
+                                                    <rect key="frame" x="40" y="90.5" width="33.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Note Text" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7D7-Yr-83t">
-                                                    <rect key="frame" x="249" y="9" width="129" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note Text" textAlignment="right" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7D7-Yr-83t">
+                                                    <rect key="frame" x="330.5" y="90.5" width="73.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="7D7-Yr-83t" firstAttribute="centerY" secondItem="iUg-d0-iuS" secondAttribute="centerY" id="cHz-eg-8i6"/>
+                                                <constraint firstItem="7D7-Yr-83t" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="5f4-Wc-wBA" secondAttribute="trailing" constant="8" symbolic="YES" id="dVh-BG-uAZ"/>
+                                                <constraint firstItem="5f4-Wc-wBA" firstAttribute="leading" secondItem="iUg-d0-iuS" secondAttribute="leadingMargin" constant="20" id="jqr-WI-ODX"/>
+                                                <constraint firstAttribute="trailing" secondItem="7D7-Yr-83t" secondAttribute="trailing" constant="10" id="pCd-ew-d9L"/>
+                                                <constraint firstItem="5f4-Wc-wBA" firstAttribute="centerY" secondItem="iUg-d0-iuS" secondAttribute="centerY" id="zAa-Mk-0aR"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.95313993922359141" green="0.82507650397276711" blue="0.98733950429999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
@@ -56,12 +61,12 @@
                                 </prototypes>
                             </tableView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mrF-jh-GDK">
-                                <rect key="frame" x="0.0" y="801" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="798" width="414" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" id="Apo-FL-wbc">
                                         <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="DIl-zB-WF2">
                                             <rect key="frame" x="20" y="5.5" width="374" height="33"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                             <segments>
                                                 <segment title="Sort by Title"/>
                                                 <segment title="Sort By Date"/>
@@ -76,13 +81,13 @@
                         </subviews>
                         <color key="backgroundColor" red="0.95313993919999995" green="0.82507650399999999" blue="0.98733950429999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="7TO-68-I9d" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="54Q-Bl-Rco"/>
-                            <constraint firstItem="mrF-jh-GDK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6ol-DR-A3l"/>
-                            <constraint firstItem="mrF-jh-GDK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CHX-1q-HP0"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7TO-68-I9d" secondAttribute="bottom" constant="8" id="TFo-tA-QkP"/>
-                            <constraint firstItem="7TO-68-I9d" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="Uzi-rn-S7G"/>
-                            <constraint firstItem="mrF-jh-GDK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="713" id="ajg-oF-vLF"/>
-                            <constraint firstItem="mrF-jh-GDK" firstAttribute="centerX" secondItem="7TO-68-I9d" secondAttribute="centerX" id="m2m-sn-SfX"/>
+                            <constraint firstItem="mrF-jh-GDK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="74d-7v-4O8"/>
+                            <constraint firstItem="mrF-jh-GDK" firstAttribute="trailing" secondItem="7TO-68-I9d" secondAttribute="trailing" id="87Y-Mr-VH3"/>
+                            <constraint firstItem="7TO-68-I9d" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="8ak-fs-h25"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mrF-jh-GDK" secondAttribute="bottom" constant="20" id="QCo-BW-fWZ"/>
+                            <constraint firstItem="mrF-jh-GDK" firstAttribute="leading" secondItem="7TO-68-I9d" secondAttribute="leading" id="WPH-aU-gT9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7TO-68-I9d" secondAttribute="bottom" constant="8" id="Zb3-gQ-fgf"/>
+                            <constraint firstItem="mrF-jh-GDK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="b8U-cc-ve7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
