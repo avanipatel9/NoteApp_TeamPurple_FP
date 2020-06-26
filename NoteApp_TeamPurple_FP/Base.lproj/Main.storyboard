@@ -24,7 +24,7 @@
                                     <textInputTraits key="textInputTraits"/>
                                 </searchBar>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="mainCell" rowHeight="201" translatesAutoresizingMaskIntoConstraints="NO" id="c6x-76-wpT" customClass="NoteCellTableViewCell" customModule="NoteApp_TeamPurple_FP" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="mainCell" rowHeight="201" translatesAutoresizingMaskIntoConstraints="NO" id="c6x-76-wpT" customClass="NoteCellTableViewCell" customModule="NoteApp_TeamPurple_FP" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="72" width="414" height="201"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="c6x-76-wpT" id="iUg-d0-iuS">
@@ -378,38 +378,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wUG-yG-GZz">
-                                <rect key="frame" x="84" y="215" width="224" height="154"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Record"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wUG-yG-GZz">
+                                <rect key="frame" x="150" y="299" width="104" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <state key="normal" title="Record" image="recordingtape" catalog="system">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
                                 <connections>
                                     <action selector="btnActionRecord:" destination="KHR-v2-Vu7" eventType="touchUpInside" id="h8k-Q7-wFc"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qkV-5V-xvW">
-                                <rect key="frame" x="84" y="449" width="224" height="154"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Play"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qkV-5V-xvW">
+                                <rect key="frame" x="166" y="513" width="65" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <state key="normal" title="Play" image="play.fill" catalog="system">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
                                 <connections>
                                     <action selector="btnActionPlay:" destination="KHR-v2-Vu7" eventType="touchUpInside" id="abn-8d-8Xf"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add voice note" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FrL-0h-hKF">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add voice note" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FrL-0h-hKF">
                                 <rect key="frame" x="20" y="114" width="362" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yvj-D6-6EC">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yvj-D6-6EC">
                                 <rect key="frame" x="35" y="159" width="345" height="64"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="eYJ-uT-ffu"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.95313993919999995" green="0.82507650399999999" blue="0.98733950429999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="FrL-0h-hKF" firstAttribute="top" secondItem="t3f-DV-1Ze" secondAttribute="top" constant="26" id="5OZ-3U-ipv"/>
+                            <constraint firstItem="t3f-DV-1Ze" firstAttribute="trailing" secondItem="wUG-yG-GZz" secondAttribute="trailing" constant="160" id="8CB-GS-hOR"/>
+                            <constraint firstItem="yvj-D6-6EC" firstAttribute="top" secondItem="FrL-0h-hKF" secondAttribute="bottom" constant="24" id="CVD-YT-uGO"/>
+                            <constraint firstItem="yvj-D6-6EC" firstAttribute="leading" secondItem="t3f-DV-1Ze" secondAttribute="leading" constant="35" id="Ido-H0-dBa"/>
+                            <constraint firstItem="wUG-yG-GZz" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="t3f-DV-1Ze" secondAttribute="leading" id="N6t-Xq-cD8"/>
+                            <constraint firstItem="t3f-DV-1Ze" firstAttribute="trailing" secondItem="qkV-5V-xvW" secondAttribute="trailing" constant="183" id="Olb-qC-29x"/>
+                            <constraint firstItem="FrL-0h-hKF" firstAttribute="leading" secondItem="Igr-sS-u1j" secondAttribute="leadingMargin" id="Ov9-ze-2bf"/>
+                            <constraint firstItem="t3f-DV-1Ze" firstAttribute="trailing" secondItem="FrL-0h-hKF" secondAttribute="trailing" constant="32" id="P5B-YG-IBC"/>
+                            <constraint firstItem="yvj-D6-6EC" firstAttribute="top" secondItem="Igr-sS-u1j" secondAttribute="top" constant="159" id="VGW-Op-wAe"/>
+                            <constraint firstItem="t3f-DV-1Ze" firstAttribute="bottom" secondItem="qkV-5V-xvW" secondAttribute="bottom" constant="316" id="WTw-Mf-DPe"/>
+                            <constraint firstItem="qkV-5V-xvW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="t3f-DV-1Ze" secondAttribute="leading" id="iZQ-SC-NG6"/>
+                            <constraint firstItem="yvj-D6-6EC" firstAttribute="centerX" secondItem="Igr-sS-u1j" secondAttribute="centerX" id="m6F-ix-4Fq"/>
+                            <constraint firstItem="wUG-yG-GZz" firstAttribute="top" secondItem="yvj-D6-6EC" secondAttribute="bottom" constant="76" id="vKm-L0-Lzh"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="t3f-DV-1Ze"/>
                     </view>
                     <navigationItem key="navigationItem" id="xuM-kq-Eli"/>
@@ -483,6 +503,8 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="map.fill" catalog="system" width="128" height="113"/>
+        <image name="play.fill" catalog="system" width="116" height="128"/>
+        <image name="recordingtape" catalog="system" width="128" height="60"/>
         <image name="square.and.pencil" catalog="system" width="128" height="118"/>
     </resources>
 </document>
