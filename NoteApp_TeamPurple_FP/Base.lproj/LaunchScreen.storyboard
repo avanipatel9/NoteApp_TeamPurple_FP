@@ -15,26 +15,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="notepad" translatesAutoresizingMaskIntoConstraints="NO" id="XgJ-ZF-FU0">
-                                <rect key="frame" x="87" y="280" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notepad" translatesAutoresizingMaskIntoConstraints="NO" id="XgJ-ZF-FU0">
+                                <rect key="frame" x="79" y="280" width="256" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="WJi-Tu-jLa"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MyNotes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rlu-lt-5F0">
-                                <rect key="frame" x="127" y="406" width="138" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MyNotes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rlu-lt-5F0">
+                                <rect key="frame" x="152" y="406" width="110" height="33"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Developed by TeamPurple Inc." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mav-MI-jGI">
-                                <rect key="frame" x="100" y="812" width="244" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Developed by TeamPurple Inc." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mav-MI-jGI">
+                                <rect key="frame" x="90" y="813" width="234" height="19"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.87598445842064898" green="0.65314102471541324" blue="0.98733950433553297" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="mav-MI-jGI" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="0DH-1I-DE7"/>
+                            <constraint firstItem="rlu-lt-5F0" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="1IA-zQ-N3j"/>
+                            <constraint firstItem="XgJ-ZF-FU0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="236" id="7Js-cN-cW8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mav-MI-jGI" secondAttribute="bottom" constant="30" id="Hao-gb-oDh"/>
+                            <constraint firstItem="XgJ-ZF-FU0" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="m7J-oh-L66"/>
+                            <constraint firstItem="rlu-lt-5F0" firstAttribute="top" secondItem="XgJ-ZF-FU0" secondAttribute="bottom" constant="-2" id="trb-kd-0L9"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
