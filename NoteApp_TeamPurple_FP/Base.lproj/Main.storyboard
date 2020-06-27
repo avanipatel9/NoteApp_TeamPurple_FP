@@ -155,7 +155,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xjF-XN-Q7y">
-                                <rect key="frame" x="20" y="280" width="109" height="30"/>
+                                <rect key="frame" x="30" y="424" width="109" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Play Audio Note">
                                     <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -164,8 +164,8 @@
                                     <action selector="playAudio:" destination="563-d5-slq" eventType="touchUpInside" id="gFt-hv-CxV"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="recordingtape" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="C1K-Jl-rAQ">
-                                <rect key="frame" x="137" y="266" width="56" height="59"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="play.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="C1K-Jl-rAQ">
+                                <rect key="frame" x="162" y="416.5" width="47" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
