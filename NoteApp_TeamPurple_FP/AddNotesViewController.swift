@@ -9,7 +9,8 @@
 import UIKit
 import CoreData
 import CoreLocation
-import AVKit
+//import AVKit
+import AVFoundation
 
 class AddNotesViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource,UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate{
     
@@ -38,6 +39,7 @@ class AddNotesViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
     @IBOutlet weak var btnAddImage: UIButton!
     @IBOutlet weak var txtCategory: UITextField!
     
+    @IBOutlet weak var btnPlay: UIButton!
     
     @IBOutlet weak var addVoiceBtn: UIButton!
     
@@ -269,16 +271,16 @@ class AddNotesViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
         if(isPlaying)
         {
             audioPlayer.stop()
-          //  btnRecord.isEnabled = true
-           // btnPlay?.setTitle("Play", for: .normal)
+//            btnRecord.isEnabled = true
+//            btnPlay.image = UIImage(systemName: "play.fill")
             isPlaying = false
         }
         else
         {
             if FileManager.default.fileExists(atPath: getFileUrl().path)
             {
-              //  btnRecord.isEnabled = false
-               // btnPlay?.setTitle("pause", for: .normal)
+//                btnRecord.isEnabled = false
+                btnPlay?.setTitle("pause", for: .normal)
                 prepare_play()
                 audioPlayer?.play()
                 isPlaying = true
