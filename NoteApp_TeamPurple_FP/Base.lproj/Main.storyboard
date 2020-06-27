@@ -311,6 +311,10 @@
                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a8m-ar-rrM">
                                                 <rect key="frame" x="0.0" y="662" width="414" height="216"/>
                                             </pickerView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="play.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="9cZ-xh-xB6">
+                                                <rect key="frame" x="31" y="592.5" width="33" height="31"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
@@ -364,7 +368,7 @@
                         <viewLayoutGuide key="safeArea" id="Cbc-oa-l6q"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add Note" id="pt8-Fg-qrG">
-                        <barButtonItem key="backBarButtonItem" title="Cancel" id="hXw-Ue-p8t"/>
+                        <barButtonItem key="backBarButtonItem" title="Add voice" id="hXw-Ue-p8t"/>
                         <barButtonItem key="rightBarButtonItem" title="Add" id="k4c-jR-PZ2">
                             <connections>
                                 <action selector="btnAdd:" destination="Kpr-nm-Pyg" id="LOP-XV-lBn"/>
@@ -377,6 +381,7 @@
                         <outlet property="categoryPicker" destination="a8m-ar-rrM" id="Ql7-Dn-8RM"/>
                         <outlet property="edtTitle" destination="o99-DT-9BM" id="YYB-T6-Q3m"/>
                         <outlet property="imageView" destination="CCO-7k-18c" id="eag-8d-BBi"/>
+                        <outlet property="playAudio" destination="9cZ-xh-xB6" id="36V-DO-Y2X"/>
                         <outlet property="txtAdd" destination="g72-yn-TAY" id="glw-ug-4CC"/>
                         <outlet property="txtCategory" destination="daM-iX-clS" id="iWU-vn-4Kt"/>
                     </connections>
@@ -518,6 +523,7 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="map.fill" catalog="system" width="128" height="113"/>
+        <image name="play.circle.fill" catalog="system" width="128" height="121"/>
         <image name="play.fill" catalog="system" width="116" height="128"/>
         <image name="recordingtape" catalog="system" width="128" height="60"/>
         <image name="square.and.pencil" catalog="system" width="128" height="118"/>

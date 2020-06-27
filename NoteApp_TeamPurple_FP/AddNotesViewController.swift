@@ -27,6 +27,7 @@ class AddNotesViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
        var imagePicker = UIImagePickerController()
        var imageData = Data()
 
+    @IBOutlet weak var playAudio: UIImageView!
     @IBOutlet weak var edtTitle: UITextField!
     @IBOutlet weak var txtAdd: UITextView!
     @IBOutlet weak var categoryPicker: UIPickerView!
@@ -40,7 +41,7 @@ class AddNotesViewController: UIViewController,UIPickerViewDelegate, UIPickerVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        playAudio.isHidden = true
         let appDelegate = UIApplication.shared.delegate as! AppDelegate;
                   dataManager = appDelegate.persistentContainer.viewContext;
                   categoryPickerData = ["Work", "Home", "School", "Miscellaneous", "Sports", "Others", "None"]
