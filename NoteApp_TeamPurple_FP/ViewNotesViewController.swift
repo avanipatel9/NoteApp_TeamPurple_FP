@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import AVKit
 
 class ViewNotesViewController: UIViewController {
   
@@ -54,8 +55,68 @@ class ViewNotesViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+     var isPlaying = false
+    var audioPlayer : AVAudioPlayer!
+    func display_alert(msg_title : String , msg_desc : String ,action_title : String)
+       {
+           let ac = UIAlertController(title: msg_title, message: msg_desc, preferredStyle: .alert)
+           ac.addAction(UIAlertAction(title: action_title, style: .default)
+           {
+               (result : UIAlertAction) -> Void in
+           _ = self.navigationController?.popViewController(animated: true)
+           })
+           present(ac, animated: true)
+       }
+       func getDocumentsDirectory() -> URL
+       {
+           let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+           let documentsDirectory = paths[0]
+           return documentsDirectory
+       }
+    func getFileUrl() -> URL
+    {
+        let filename = "myRecording.m4a"
+        let filePath = getDocumentsDirectory().appendingPathComponent(filename)
+    return filePath
+    }
     
-
+    @IBAction func playAudio(_ sender: UIButton) {
+        if(isPlaying)
+        {
+            audioPlayer.stop()
+          //  btnRecord.isEnabled = true
+           // btnPlay?.setTitle("Play", for: .normal)
+            isPlaying = false
+        }
+        else
+        {
+            if FileManager.default.fileExists(atPath: getFileUrl().path)
+            {
+              //  btnRecord.isEnabled = false
+               // btnPlay?.setTitle("pause", for: .normal)
+                prepare_play()
+                audioPlayer?.play()
+                isPlaying = true
+            }
+            else
+            {
+                display_alert(msg_title: "Error", msg_desc: "Audio file is missing.", action_title: "OK")
+            }
+        }
+    }
+    func prepare_play()
+       {
+           do
+           {
+               audioPlayer = try AVAudioPlayer(contentsOf: getFileUrl())
+               audioPlayer.delegate = self as? AVAudioPlayerDelegate
+               audioPlayer.prepareToPlay()
+           }
+           catch{
+               print("Error")
+           }
+       }
+    
     
 
 }
